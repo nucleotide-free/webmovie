@@ -1,0 +1,34 @@
+#默认使用配置
+server:
+  port: 8085
+#连接数据库配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sparkdb?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 100708007sM
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+    password:
+
+
+mybatis:
+  typeAliasesPackage: com.software.beans
+  mapperLocations: classpath:mapper/*.xml
+  #开启MyBatis的二级缓存
+  configuration:
+    cache-enabled: true
+
+# 分页配置
+pagehelper:
+  helperDalect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: conut=countSql

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.software.dao.ProjectEntityMapper">
+
+  <!--查询全部项目的名字接口-->
+  <select id="queryAllProjectName" resultType="map">
+    select commenthour,commenttotal
+       from tbl_comment_process_result
+  </select>
+
+
+</mapper>
