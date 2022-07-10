@@ -2,23 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.software.dao.ProjectEntityMapper">
 
-  <!--查询全部项目的名字接口-->
-  <select id="queryMovieTypeNum" resultType="map">
-    select name,num
-       from movies_type_num
-  </select>
+    <!--查询全部项目的名字接口-->
+    <select id="queryMovieTypeNum" resultType="map">
+        select name, num
+        from movies_type_num
+    </select>
 
-<!--    2-1-->
-  <select id="queryMovieYearNum" resultType="map">
-      select year,num
-      from movies_years_num
-      order by year asc
-  </select>
-<!--    2-2-->
-    <select id="queryMovieYearRevenue" resultType="map">
-        select year,revenue
+    <!--    2-1-->
+    <select id="queryMovieYearNum" resultType="map">
+        select year, num
         from movies_years_num
         order by year asc
+    </select>
+    <!--    2-2-->
+    <select id="queryMovieYearRevenue" resultType="map">
+        select year, revenue
+        from movies_years_num
+        order by year asc
+    </select>
+
+    <select id="queryMovieTypeTimeNum" resultType="map">
+        select type, year, num
+        from movies_type_time_num
+        order by year
     </select>
 
 

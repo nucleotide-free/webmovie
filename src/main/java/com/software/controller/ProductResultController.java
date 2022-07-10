@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -66,4 +67,17 @@ public class ProductResultController {
         return httpResponseEntity;
     }
 
+    /**
+     * 查询全部历史问卷
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieTypeTimeNum")
+    public HttpResponseEntity queryMovieTypeTimeNum() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Object> result = projectService.queryMovieTypeTimeNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 }

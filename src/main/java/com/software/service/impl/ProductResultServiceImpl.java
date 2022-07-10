@@ -38,4 +38,14 @@ public class ProductResultServiceImpl implements ProductResultService {
         return result;
     }
 
+    @Override
+    public List<Object> queryMovieTypeTimeNum() {
+        List<Object> resultList = new ArrayList<Object>();
+        List<Map<String,Object>> proResult = projectEntityMapper.queryMovieTypeTimeNum();
+        for(Map<String,Object> proObj : proResult) {
+            resultList.add(proObj);
+        }
+        return resultList;
+    }
+
 }
