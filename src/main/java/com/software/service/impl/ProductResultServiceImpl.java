@@ -26,5 +26,16 @@ public class ProductResultServiceImpl implements ProductResultService {
         return result;
     }
 
+    @Override
+    public List<Map<String, Object>> queryMovieYearNum() {
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieYearNum();
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryMovieYearRevenue() {
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieYearRevenue();
+        return result;
+    }
 
 }

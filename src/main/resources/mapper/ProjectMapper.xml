@@ -8,5 +8,18 @@
        from movies_type_num
   </select>
 
+<!--    2-1-->
+  <select id="queryMovieYearNum" resultType="map">
+      select year,num
+      from movies_years_num
+      order by year asc
+  </select>
+<!--    2-2-->
+    <select id="queryMovieYearRevenue" resultType="map">
+        select year,revenue
+        from movies_years_num
+        order by year asc
+    </select>
+
 
 </mapper>

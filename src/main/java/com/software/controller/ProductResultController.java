@@ -25,6 +25,7 @@ public class ProductResultController {
 
     @Autowired
     private ProductResultService projectService;
+
     /**
      * 查询所有分析数据
      * @param
@@ -34,6 +35,32 @@ public class ProductResultController {
     public HttpResponseEntity queryProjectList() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieTypeNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    /**
+     * 2-1
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieYearNum")
+    public HttpResponseEntity queryMovieYearNum() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieYearNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    /**
+     * 2-2
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieYearRevenue")
+    public HttpResponseEntity queryMovieYearRevenue() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieYearRevenue();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;
