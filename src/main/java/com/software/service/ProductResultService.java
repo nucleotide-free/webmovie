@@ -10,9 +10,12 @@ import java.util.Map;
  * 功能：业务逻辑层实现项目的增删改查操作
  */
 public interface ProductResultService {
+
     public List<Map<String, Object>> queryMovieTypeNum();//1
     public List<Map<String, Object>> queryMovieYearNum();//2-1
     public List<Map<String, Object>> queryMovieYearRevenue();//2-2
     public List<Object> queryMovieTypeTimeNum();//3
+    public List<Map<String, Object>> queryMovieAreaNum();//4
+    public List<Map<String, Object>> queryMovieTypeRevenue();//5
 
 }

@@ -28,7 +28,7 @@ public class ProductResultController {
     private ProductResultService projectService;
 
     /**
-     * 查询所有分析数据
+     * 1
      * @param
      * @return
      */
@@ -68,7 +68,7 @@ public class ProductResultController {
     }
 
     /**
-     * 查询全部历史问卷
+     * 3
      * @param
      * @return
      */
@@ -76,6 +76,23 @@ public class ProductResultController {
     public HttpResponseEntity queryMovieTypeTimeNum() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Object> result = projectService.queryMovieTypeTimeNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    @RequestMapping(value = "/queryMovieAreaNum")//4
+    public HttpResponseEntity queryMovieAreaNum() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieAreaNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+
+    @RequestMapping(value = "/queryMovieTypeRevenue")//5
+    public HttpResponseEntity queryMovieTypeRevenue() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTypeRevenue();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;

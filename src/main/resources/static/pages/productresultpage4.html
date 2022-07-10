@@ -8,45 +8,65 @@
 </head>
 <body>
 
-<h1>雷达图</h1>
+<h1>各地区电影的数量</h1>
 <div id="main" style="width: 600px;height: 500px"></div>
 <script type="text/javascript">
 
     var chartDom = document.getElementById('main');
     var myChart = echarts.init(chartDom);
 
-    $.getJSON("./queryProductResultList",function(values){
+    $.getJSON("./queryMovieAreaNum",function(values){
 
-        var xAxis = []
-        var yAxis = []
+        var bufData = []
+        var othersData = {}
+        othersData.name = "others"
+        othersData.value = 0;
         for(var i=0;i<values.data.length;i++){
-            xAxis.push(values.data[i]['commenthour'])
-            yAxis.push(values.data[i]['commenttotal'])
+            var num = values.data[i]['num']
+            if(num < 600)
+                othersData.value += num;
+            else {
+                var jsonData ={}
+                jsonData.value = values.data[i]['num']
+                jsonData.name = values.data[i]['name']
+                bufData.push(jsonData)
+            }
         }
-        var option;
-
+        bufData.push(othersData)
         option = {
-            xAxis: {
-                type: 'category',
-                data: xAxis
+            title: {
+                text: '各地区电影数量比例',
+                left: 'center'
             },
-            yAxis: {
-                type: 'value'
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
             },
             series: [
                 {
-                    data: yAxis,
-                    type: 'line'
+                    name: '此地区电影占比',
+                    type: 'pie',
+                    radius: '40%',
+                    data: bufData,
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
                 }
             ]
         };
 
-        myChart.setOption(option);
+        option && myChart.setOption(option);
+
     })
 
-
 </script>
-
 
 </body>
 </html>
