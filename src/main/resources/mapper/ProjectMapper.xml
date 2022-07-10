@@ -5,8 +5,20 @@
   <!--查询全部项目的名字接口-->
   <select id="queryMovieTypeNum" resultType="map">
     select name,num
-       from movies_type_num
+    from movies_type_num
   </select>
 
+  <!--4-->
+  <select id="queryMovieAreaNum" resultType="map">
+    select name,num
+    from movies_area_num
+    order by num asc
+  </select>
+
+  <!--5-->
+  <select id="queryMovieTypeRevenue" resultType="map">
+    select type,revenue
+    from movies_type_revenue
+  </select>
 
 </mapper>

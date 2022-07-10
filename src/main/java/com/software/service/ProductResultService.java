@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public interface ProductResultService {
 
-
-
-    public List<Map<String, Object>> queryMovieTypeNum();
+    public List<Map<String, Object>> queryMovieTypeNum();//1
+    public List<Map<String, Object>> queryMovieAreaNum();//4
+    public List<Map<String, Object>> queryMovieTypeRevenue();//5
 }

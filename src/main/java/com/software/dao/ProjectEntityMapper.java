@@ -10,5 +10,7 @@ import java.util.Map;
 public interface ProjectEntityMapper {
 
    List<Map<String,Object>> queryMovieTypeNum();
+   List<Map<String,Object>> queryMovieAreaNum();//4
+   List<Map<String,Object>> queryMovieTypeRevenue();//5
 
 }

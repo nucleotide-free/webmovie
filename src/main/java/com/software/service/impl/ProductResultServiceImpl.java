@@ -26,5 +26,16 @@ public class ProductResultServiceImpl implements ProductResultService {
         return result;
     }
 
+    @Override
+    public List<Map<String, Object>> queryMovieAreaNum() {//4
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieAreaNum();
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryMovieTypeRevenue() {//5
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeRevenue();
+        return result;
+    }
 
 }

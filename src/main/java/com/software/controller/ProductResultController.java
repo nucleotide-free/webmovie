@@ -39,4 +39,21 @@ public class ProductResultController {
         return httpResponseEntity;
     }
 
+    @RequestMapping(value = "/queryMovieAreaNum")//4
+    public HttpResponseEntity queryMovieAreaNum() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieAreaNum();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+
+    @RequestMapping(value = "/queryMovieTypeRevenue")//5
+    public HttpResponseEntity queryMovieTypeRevenue() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTypeRevenue();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 }
