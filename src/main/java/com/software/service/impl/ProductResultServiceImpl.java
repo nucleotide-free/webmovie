@@ -27,13 +27,13 @@ public class ProductResultServiceImpl implements ProductResultService {
 
     @Override
     public List<Map<String, Object>> queryMovieYearNum() {//2-1
-        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieYearNum();
         return result;
     }
 
     @Override
     public List<Map<String, Object>> queryMovieYearRevenue() {//2-2
-        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieYearRevenue();
         return result;
     }
 
@@ -64,9 +64,16 @@ public class ProductResultServiceImpl implements ProductResultService {
         List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeVote();
         return result;
     }
+
     @Override
     public List<Map<String, Object>> queryMovieTimeRevenue() {//7
         List<Map<String,Object>> result = projectEntityMapper.queryMovieTimeRevenue();
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryMovieTimeVote() {//8
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTimeVote();
         return result;
     }
 }

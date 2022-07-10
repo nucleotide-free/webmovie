@@ -8,34 +8,34 @@
 </head>
 <body>
 
-<h1>散点图</h1>
-<div id="main" style="width: 1300px;height: 600px"></div>
+<h1>8-电影时长与电影评分的关系</h1>
+<div id="chart-8" style="width: 1300px;height: 600px"></div>
 <script type="text/javascript">
 
-    var chartDom = document.getElementById('main');
+    var chartDom = document.getElementById('chart-8');
     var myChart = echarts.init(chartDom);
 
-    $.getJSON("./queryMovieTimeRevenue", function (values) {
+    $.getJSON("./queryMovieTimeVote",function(values){
 
         var xAxis = []
         var yAxis = []
-        for (var i = 0; i < values.data.length; i++) {
+        for(var i=0;i<values.data.length;i++){
             xAxis.push(values.data[i]['runtime'])
-            yAxis.push(values.data[i]['revenue'])
+            yAxis.push(values.data[i]['vote_average'])
         }
         var option;
 
         option = {
             tooltip: {},
             legend: {
-                data: ["票房"]
+                data: ["评分"]
             },
             xAxis: {
                 data: xAxis
             },
             yAxis: {},
             series: [{
-                name: "票房",
+                name: "评分",
                 type: "scatter",
                 data: yAxis
             }]
@@ -45,5 +45,7 @@
 
 
 </script>
+
+
 </body>
-</html>
+</html>v

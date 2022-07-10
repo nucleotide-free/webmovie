@@ -66,7 +66,6 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
-
     /**
      * 3
      * @param
@@ -80,7 +79,12 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
-    @RequestMapping(value = "/queryMovieAreaNum")//4
+    /**
+     * 4
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieAreaNum")
     public HttpResponseEntity queryMovieAreaNum() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieAreaNum();
@@ -93,7 +97,7 @@ public class ProductResultController {
      * @param
      * @return
      */
-    @RequestMapping(value = "/queryMovieTypeRevenue")//5
+    @RequestMapping(value = "/queryMovieTypeRevenue")
     public HttpResponseEntity queryMovieTypeRevenue() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieTypeRevenue();
@@ -107,7 +111,7 @@ public class ProductResultController {
      * @return
      */
     @RequestMapping(value = "/queryMovieTypeVote")
-    public HttpResponseEntity queryProjectList6() {
+    public HttpResponseEntity queryMovieTypeVote() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieTypeVote();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
@@ -120,9 +124,22 @@ public class ProductResultController {
      * @return
      */
     @RequestMapping(value = "/queryMovieTimeRevenue")
-    public HttpResponseEntity queryProjectList7() {
+    public HttpResponseEntity queryMovieTimeRevenue() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieTimeRevenue();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    /**
+     * 8
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieTimeVote")
+    public HttpResponseEntity queryMovieTimeVote() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTimeVote();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;

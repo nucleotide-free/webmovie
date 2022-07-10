@@ -31,24 +31,33 @@
 
     <!--4-->
     <select id="queryMovieAreaNum" resultType="map">
-        select name,num
+        select name, num
         from movies_area_num
         order by num asc
     </select>
 
     <!--5-->
     <select id="queryMovieTypeRevenue" resultType="map">
-        select type,revenue
+        select type, revenue
         from movies_type_revenue
     </select>
 
-  <select id="queryMovieTypeVote" resultType="map">
-    select type,vote
-       from movies_type_vote
-  </select>
+    <!--6-->
+    <select id="queryMovieTypeVote" resultType="map">
+        select type, vote
+        from movies_type_vote
+    </select>
 
-  <select id="queryMovieTimeRevenue" resultType="map">
-    select runtime,revenue
-       from movies_time_revenue
-  </select>
+    <!--7-->
+    <select id="queryMovieTimeRevenue" resultType="map">
+        select runtime, revenue
+        from movies_time_revenue
+    </select>
+
+    <!--8-->
+    <select id="queryMovieTimeVote" resultType="map">
+        select runtime, vote_average
+        from movies_time_vote
+    </select>
+
 </mapper>
