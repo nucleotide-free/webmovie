@@ -10,5 +10,6 @@ import java.util.Map;
 public interface ProjectEntityMapper {
 
    List<Map<String,Object>> queryMovieTypeNum();
-
+   List<Map<String,Object>> queryMovieTypeVote();
+   List<Map<String,Object>> queryMovieTimeRevenue();
 }

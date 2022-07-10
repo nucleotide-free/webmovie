@@ -3,10 +3,18 @@
 <mapper namespace="com.software.dao.ProjectEntityMapper">
 
   <!--查询全部项目的名字接口-->
-  <select id="queryAllProjectName" resultType="map">
-    select commenthour,commenttotal
-       from tbl_comment_process_result
+  <select id="queryMovieTypeNum" resultType="map">
+    select name,num
+       from movies_type_num
   </select>
 
+  <select id="queryMovieTypeVote" resultType="map">
+    select type,vote
+       from movies_type_vote
+  </select>
 
+  <select id="queryMovieTimeRevenue" resultType="map">
+    select runtime,revenue
+       from movies_time_revenue
+  </select>
 </mapper>

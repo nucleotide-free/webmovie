@@ -8,5 +8,13 @@
        from movies_type_num
   </select>
 
+  <select id="queryMovieTypeVote" resultType="map">
+    select type,vote
+       from movies_type_vote
+  </select>
 
+  <select id="queryMovieTimeRevenue" resultType="map">
+    select runtime,revenue
+       from movies_time_revenue
+  </select>
 </mapper>

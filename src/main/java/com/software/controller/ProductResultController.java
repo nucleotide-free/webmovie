@@ -38,5 +38,21 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
+    @RequestMapping(value = "/queryMovieTypeVote")
+    public HttpResponseEntity queryProjectList6() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTypeVote();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 
+    @RequestMapping(value = "/queryMovieTimeRevenue")
+    public HttpResponseEntity queryProjectList7() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTimeRevenue();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 }

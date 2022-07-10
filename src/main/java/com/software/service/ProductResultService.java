@@ -13,4 +13,6 @@ public interface ProductResultService {
 
 
     public List<Map<String, Object>> queryMovieTypeNum();
+    public List<Map<String, Object>> queryMovieTypeVote();
+    public List<Map<String, Object>> queryMovieTimeRevenue();
 }
