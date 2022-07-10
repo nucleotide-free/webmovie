@@ -19,12 +19,12 @@ public class ProductResultServiceImpl implements ProductResultService {
     @Autowired
     private ProjectEntityMapper projectEntityMapper;
 
-    /**
-     * 查询全部项目的名字接口
-     * @return
-     */
-    public List<Map<String,Object>> queryAllProjectName() {
-        List<Map<String,Object>> result = projectEntityMapper.queryAllProjectName();
+
+    @Override
+    public List<Map<String, Object>> queryMovieTypeNum() {
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
         return result;
     }
+
+
 }

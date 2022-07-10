@@ -176,7 +176,11 @@
 			<artifactId>dubbo</artifactId>
 			<version>2.5.3</version>
 		</dependency>
-
+		<!-- spring-boot热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -188,6 +192,7 @@
 					<fork>true</fork>
 				</configuration>
 			</plugin>
+
 			<!--自动生成文件的配置-->
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>

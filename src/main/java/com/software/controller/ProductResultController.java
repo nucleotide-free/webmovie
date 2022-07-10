@@ -25,17 +25,15 @@ public class ProductResultController {
 
     @Autowired
     private ProductResultService projectService;
-
-
     /**
      * 查询所有分析数据
      * @param
      * @return
      */
-    @RequestMapping(value = "/queryProductResultList")
+    @RequestMapping(value = "/queryMovieTypeNum")
     public HttpResponseEntity queryProjectList() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
-        List<Map<String,Object>> result = projectService.queryAllProjectName();
+        List<Map<String,Object>> result = projectService.queryMovieTypeNum();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;

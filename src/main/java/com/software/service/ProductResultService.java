@@ -10,9 +10,7 @@ import java.util.Map;
  */
 public interface ProductResultService {
 
-    /**
-     * 查询全部分析结果
-     * @return
-     */
-    public List<Map<String,Object>> queryAllProjectName();
+
+
+    public List<Map<String, Object>> queryMovieTypeNum();
 }

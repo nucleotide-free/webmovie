@@ -9,6 +9,6 @@ import java.util.Map;
 @Repository
 public interface ProjectEntityMapper {
 
-   List<Map<String,Object>> queryAllProjectName();
+   List<Map<String,Object>> queryMovieTypeNum();
 
 }
