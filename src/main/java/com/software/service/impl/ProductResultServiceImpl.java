@@ -19,11 +19,32 @@ public class ProductResultServiceImpl implements ProductResultService {
     @Autowired
     private ProjectEntityMapper projectEntityMapper;
 
-
     @Override
-    public List<Map<String, Object>> queryMovieTypeNum() {
+    public List<Map<String, Object>> queryMovieTypeNum() {//1
         List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
         return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryMovieYearNum() {//2-1
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryMovieYearRevenue() {//2-2
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeNum();
+        return result;
+    }
+
+    @Override
+    public List<Object> queryMovieTypeTimeNum() {//3
+        List<Object> resultList = new ArrayList<Object>();
+        List<Map<String,Object>> proResult = projectEntityMapper.queryMovieTypeTimeNum();
+        for(Map<String,Object> proObj : proResult) {
+            resultList.add(proObj);
+        }
+        return resultList;
     }
 
     @Override
@@ -39,13 +60,13 @@ public class ProductResultServiceImpl implements ProductResultService {
     }
 
     @Override
-    public List<Object> queryMovieTypeTimeNum() {
-        List<Object> resultList = new ArrayList<Object>();
-        List<Map<String,Object>> proResult = projectEntityMapper.queryMovieTypeTimeNum();
-        for(Map<String,Object> proObj : proResult) {
-            resultList.add(proObj);
-        }
-        return resultList;
+    public List<Map<String, Object>> queryMovieTypeVote() {//6
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTypeVote();
+        return result;
     }
-
+    @Override
+    public List<Map<String, Object>> queryMovieTimeRevenue() {//7
+        List<Map<String,Object>> result = projectEntityMapper.queryMovieTimeRevenue();
+        return result;
+    }
 }

@@ -2,7 +2,6 @@ package com.software.service;
 
 import com.software.beans.ProdcutResultEntity;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,5 +16,6 @@ public interface ProductResultService {
     public List<Object> queryMovieTypeTimeNum();//3
     public List<Map<String, Object>> queryMovieAreaNum();//4
     public List<Map<String, Object>> queryMovieTypeRevenue();//5
-
+    public List<Map<String, Object>> queryMovieTypeVote();//6
+    public List<Map<String, Object>> queryMovieTimeRevenue();//7
 }

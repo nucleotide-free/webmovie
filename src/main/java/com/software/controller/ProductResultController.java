@@ -88,11 +88,41 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
-
+    /**
+     * 5
+     * @param
+     * @return
+     */
     @RequestMapping(value = "/queryMovieTypeRevenue")//5
     public HttpResponseEntity queryMovieTypeRevenue() {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
         List<Map<String,Object>> result = projectService.queryMovieTypeRevenue();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    /**
+     * 6
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieTypeVote")
+    public HttpResponseEntity queryProjectList6() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTypeVote();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+    /**
+     * 7
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryMovieTimeRevenue")
+    public HttpResponseEntity queryProjectList7() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryMovieTimeRevenue();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;

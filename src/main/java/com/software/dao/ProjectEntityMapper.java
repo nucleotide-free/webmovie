@@ -10,15 +10,12 @@ import java.util.Map;
 @Repository
 public interface ProjectEntityMapper {
 
-   List<Map<String,Object>> queryMovieTypeNum();
+   List<Map<String,Object>> queryMovieTypeNum();//1
+   List<Map<String,Object>> queryMovieYearNum();//2-1
+   List<Map<String,Object>> queryMovieYearRevenue();//2-2
+   List<Map<String,Object>> queryMovieTypeTimeNum();//3
    List<Map<String,Object>> queryMovieAreaNum();//4
    List<Map<String,Object>> queryMovieTypeRevenue();//5
-
-   /**
-    * 3-查询表3 type-time-num
-    * @param
-    * @return
-    */
-   List<Map<String,Object>> queryMovieTypeTimeNum();
-
+   List<Map<String,Object>> queryMovieTypeVote();//6
+   List<Map<String,Object>> queryMovieTimeRevenue();//7
 }
