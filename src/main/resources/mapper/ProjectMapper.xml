@@ -50,16 +50,14 @@
 
     <!--7-->
     <select id="queryMovieTimeRevenue" resultType="map">
-        select time, revenue
+        select runtime, revenue
         from movies_time_revenue
-        order by time asc
     </select>
 
     <!--8-->
     <select id="queryMovieTimeVote" resultType="map">
-        select time, vote
+        select runtime, vote_average
         from movies_time_vote
-        order by time asc
     </select>
     <!--9-->
     <select id="queryKeywords" resultType="map">
