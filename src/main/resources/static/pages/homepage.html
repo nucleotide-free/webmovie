@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Echarts练习</title>
     <script src="../js/echarts.min.js"></script>
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-    <style>
-        .container {
-            display: flex;
-            width: 100vw;
-            height: 400px;
-        }
-    </style>
+<!--    <style type="text/css" media="all">-->
+<!--        @import "static/css/homepage.css";-->
+<!--    </style>-->
+    <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
-<p style="font-size: 20px; font-weight: bold; color: brown;">Echarts练习图表练习</p>
-<div class="container" id="demo1"></div>
-<div class="container" id="demo2"></div>
-<div class="container" id="demo3"></div>
-<div class="container" id="demo4"></div>
-<div class="container" id="demo6"></div>
-<script src="./option.js"></script>
+<div id="page-container">
+    <div id="top_logo">
+        <div id="right-top">
+            <ul>
+                <li id="home" title="主页"><a href="homepage.html"></a></li>
+                <li id="community" title="社区"><a href="community_home.jsp"></a></li>
+                <li id="shop" title="特产文创"><a href="Shop_home.jsp"></a></li>
+                <li id="account" title="个人中心"><a href="<%=accountHref %>"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>

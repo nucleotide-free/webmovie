@@ -1,0 +1,108 @@
+@CHARSET "UTF-8";
+
+body ,#page-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: Candara, "Microsoft YaHei", Arial, sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    background: yellow;
+}
+
+* {
+    box-sizing: border-box;
+    transition: .25s all ease;
+}
+
+#top_logo {
+    position:fixed;
+    top: 0;
+    height: 68px;
+    width: 100%;
+    background: blue url(../../images/logo.png) 3% 50% no-repeat;
+    background-size: auto 44px;
+    z-index: 9;
+    font-size: 12px;
+}
+
+#right-top {
+    width: 100%;
+    height: 100%;
+    float: right;
+    text-align: right;
+}
+#right-top a {
+    text-decoration:none;
+    display:block;
+    height:100%;
+    weight:100%;
+}
+
+#t1 {
+    width: 450px;
+    height: 44px;
+    vertical-align: top;
+    line-height: 40px;
+    margin: 12px 0;
+    padding: 4px 16px;
+    border: 0 ;
+    border-radius: 4px;
+    color: black;
+    background-color: #F2F2F2;
+}
+
+#right-top ul {
+    top: 50%;
+    height: 100%;
+    padding: 0;
+    list-style-type: none;
+    display:inline-block;
+}
+#right-top li,#right-top li:hover {
+    float:left;
+    width: 30px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-size:auto 25px;
+    background-position:50% 50%;
+    margin:0 12px;
+    cursor:pointer;
+    transition: 0.15s all ease;
+}
+#search {
+    background-image:url(../../images/search1.png);
+}
+#search:hover {
+    background-image:url(../../images/search-gray.png);
+}
+#home {
+    background-image:url(./image/nav/home1.svg);
+}
+#home:hover {
+    background-image:url(./image/nav/home2.svg);
+}
+#community {
+    background-image:url(./image/nav/community1.svg) ;
+}
+#community:hover {
+    background-image:url(./image/nav/community2.svg);
+}
+#shop {
+    background-image:url(./image/nav/cart1.svg);
+}
+#shop:hover {
+    background-image:url(./image/nav/cart2.svg);
+}
+#account {
+    background-image:url(./image/nav/account1.svg);
+}
+#account:hover {
+    background-image:url(./image/nav/account2.svg);
+}
+#container{
+    width: 100%;
+    height: 740px;
+    border: 1px solid #DCDCDC;
+}

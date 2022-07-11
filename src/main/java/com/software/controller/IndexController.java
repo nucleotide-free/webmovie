@@ -13,6 +13,6 @@ public class IndexController {
     public String gotoIndex(){
         //return "pages/login.html";
         //return "pages/page1.html";
-        return "pages/page9.html";
+        return "pages/homepage.html";
     }
 }
