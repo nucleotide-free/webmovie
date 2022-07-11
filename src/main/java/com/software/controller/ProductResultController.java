@@ -144,4 +144,17 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
+    /**
+     * 9
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/queryKeywords")
+    public HttpResponseEntity queryKeywords() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Map<String,Object>> result = projectService.queryKeywords();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 }

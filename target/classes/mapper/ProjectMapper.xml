@@ -62,4 +62,10 @@
         order by time asc
     </select>
 
+
+    <select id="queryKeywords" resultType="map">
+        select name,value
+        from movies_keywords
+    </select>
+
 </mapper>
