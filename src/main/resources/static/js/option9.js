@@ -44,7 +44,7 @@ $.getJSON("./queryKeywords",function(values) {
         option9.series[0].maskImage
         chart.setOption(option9);
     }
-    maskImage.src = '../../images/logo.png';
+    maskImage.src = '../pages/logo.png';
     window.onresize = function () {
         chart.resize();
     }
