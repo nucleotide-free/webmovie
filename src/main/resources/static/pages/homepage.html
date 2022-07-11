@@ -11,70 +11,60 @@
 <body>
 <div id="page-container">
     <div id="top_logo">
-        <div id="right-top">
-            <input type="text" name="t1" id="t1" placeholder="给你的旅行留一个念想"/>
+        <div id="main-nav">
             <ul>
-                <li id="search" title="搜索"><a href="#"></a></li>
-                <li id="home" title="主页"><a href="main.jsp">&nbsp</a></li>
-                <li id="community" title="社区"><a href="community_home.jsp">&nbsp</a></li>
-                <li id="shop" title="特产文创"><a href="Shop_home.jsp"></a></li>
-                <li id="account" title="个人中心"><a href="<%=accountHref %>"></a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">首页 HOME</a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">选电影</a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">排行榜</a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">影视分类</a></li>
+                <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">年度榜单</a></li>
             </ul>
         </div>
     </div>
-</div>
-
-    <div id="main-nav">
-        <ul>
-            <li class="dropdown"><a class="dropbtn" href="homepage.html">首页 HOME</a></li>
-            <li class="dropdown"><a class="dropbtn" href="homepage.html">选电影</a></li>
-            <li class="dropdown"><a class="dropbtn" href="homepage.html">排行榜</a></li>
-            <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">影视分类</a></li>
-            <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">年度榜单</a></li>
-        </ul>
-    </div>
 
     <div id="content">
-
-        <div class="recommendation">
-            <h1>每日推荐</h1>
-        </div>
-
-        <div class="top-10">
-            <h1>Top 10</h1>
-        </div>
-
-        <div class="recommendation">
-            <h1>热门推荐</h1>
-        </div>
+<!--        <div class="recommendation">-->
+<!--            <h1>每日推荐</h1>-->
+<!--        </div>-->
+<!--        <div class="top-10">-->
+<!--            <h1>Top 10</h1>-->
+<!--        </div>-->
+<!--        <div class="recommendation">-->
+<!--            <h1>热门推荐</h1>-->
+<!--        </div>-->
 
         <div class="charts">
-            <p style="font-size: 20px; font-weight: bold; color: brown;">Echarts练习图表练习</p>
+            <div class="chart-content">
+                <div class="chart-title">
+                    不同类型电影比较
+                    <button class="chart-change" id="switch1">切换</button>
+                </div>
+                <div class="chart-graph" id="graph1"style="display: none" ></div>
+                <div class="chart-graph" id="graph1-2" ></div>
 
-            <div style="height: 600px" id="graph1"></div>
-            <div style="height: 600px" id="graph2"></div>
-            <div style="height: 500px" id="graph3"></div>
-            <div style="height: 600px" id="graph4"></div>
-            <div style="height: 600px" id="graph5"></div>
-            <div style="height: 600px" id="graph6"></div>
-            <div style="height: 600px" id="graph7"></div>
-            <div style="height: 600px" id="graph8"></div>
-            <div style="height: 600px" id="graph9"></div>
+            </div>
+
+<!--            <div class="chart-graph" id="graph2"></div>     -->
+            <!--            <div style="height: 500px" id="graph3"></div>-->
+            <!--            <div style="height: 600px" id="graph4"></div>-->
+            <!--            <div style="height: 600px" id="graph5"></div>-->
+            <!--            <div style="height: 600px" id="graph6"></div>-->
+            <!--            <div style="height: 600px" id="graph7"></div>-->
+            <!--            <div style="height: 600px" id="graph8"></div>-->
+            <!--            <div style="height: 600px" id="graph9"></div>-->
         </div>
+
     </div>
-
-
-
-
-
+</div>
 </body>
+
 <script src="../js/option1.js"></script>
 <script src="../js/option2.js"></script>
-<script src="../js/option3.js"></script>
-<script src="../js/option4.js"></script>
-<script src="../js/option5.js"></script>
-<script src="../js/option6.js"></script>
-<script src="../js/option7.js"></script>
-<script src="../js/option8.js"></script>
-<script src="../js/option9.js"></script>
+<!--<script src="../js/option3.js"></script>-->
+<!--<script src="../js/option4.js"></script>-->
+<!--<script src="../js/option5.js"></script>-->
+<!--<script src="../js/option6.js"></script>-->
+<!--<script src="../js/option7.js"></script>-->
+<!--<script src="../js/option8.js"></script>-->
+<!--<script src="../js/option9.js"></script>-->
 </html>
