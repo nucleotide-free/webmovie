@@ -1,5 +1,5 @@
-var chartDom = document.getElementById('graph5');
-var myChart = echarts.init(chartDom);
+var chartDom5 = document.getElementById('graph5');
+var myChart5 = echarts.init(chartDom5);
 
 $.getJSON("./queryMovieTypeRevenue",function(values){
 
@@ -9,9 +9,9 @@ $.getJSON("./queryMovieTypeRevenue",function(values){
         xAxis.push(values.data[i]['type'])
         yAxis.push(values.data[i]['revenue']/10000000)
     }
-    var option;
+    var option5;
 
-    option = {
+    option5 = {
         xAxis: {
             type: 'category',
             name: "电影类型",
@@ -32,5 +32,5 @@ $.getJSON("./queryMovieTypeRevenue",function(values){
             }
         ]
     };
-    myChart.setOption(option);
+    myChart5.setOption(option5);
 })

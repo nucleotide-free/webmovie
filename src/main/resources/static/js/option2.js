@@ -1,5 +1,5 @@
-var chartDom = document.getElementById('graph2');
-var Chart2_1 = echarts.init(chartDom);
+var chartDom2 = document.getElementById('graph2');
+var Chart2_1 = echarts.init(chartDom2);
 
 $.getJSON("./queryMovieYearNum",function(values){
 

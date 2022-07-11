@@ -1,17 +1,17 @@
-var chartDom = document.getElementById('graph8');
-var myChart = echarts.init(chartDom);
+var chartDom8 = document.getElementById('graph8');
+var myChart8 = echarts.init(chartDom8);
 
 $.getJSON("./queryMovieTimeVote",function(values){
 
     var xAxis = []
     var yAxis = []
     for(var i=0;i<values.data.length;i++){
-        xAxis.push(values.data[i]['runtime'])
-        yAxis.push(values.data[i]['vote_average'])
+        xAxis.push(values.data[i]['time'])
+        yAxis.push(values.data[i]['vote'])
     }
-    var option;
+    var option8;
 
-    option = {
+    option8 = {
         tooltip: {},
         legend: {
             data: ["评分"]
@@ -26,5 +26,5 @@ $.getJSON("./queryMovieTimeVote",function(values){
             data: yAxis
         }]
     };
-    myChart.setOption(option);
+    myChart8.setOption(option8);
 })

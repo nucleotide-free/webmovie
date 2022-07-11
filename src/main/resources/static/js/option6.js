@@ -1,5 +1,5 @@
-var chartDom = document.getElementById('graph6');
-var myChart = echarts.init(chartDom);
+var chartDom6 = document.getElementById('graph6');
+var myChart6 = echarts.init(chartDom6);
 
 $.getJSON("./queryMovieTypeVote",function(values){
 
@@ -9,9 +9,9 @@ $.getJSON("./queryMovieTypeVote",function(values){
         xAxis.push(values.data[i]['type'])
         yAxis.push(values.data[i]['vote'])
     }
-    var option;
+    var option6;
 
-    option = {
+    option6 = {
         xAxis: {
             type: 'category',
             axisLabel: {
@@ -30,5 +30,5 @@ $.getJSON("./queryMovieTypeVote",function(values){
             }
         ]
     };
-    myChart.setOption(option);
+    myChart6.setOption(option6);
 })

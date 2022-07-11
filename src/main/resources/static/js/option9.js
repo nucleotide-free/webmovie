@@ -10,7 +10,7 @@ $.getJSON("./queryKeywords",function(values) {
     }
     var maskImage = new Image();
 
-    var option = {
+    var option9 = {
         series: [ {
             type: 'wordCloud',
             sizeRange: [4, 150],
@@ -41,10 +41,10 @@ $.getJSON("./queryKeywords",function(values) {
         } ]
     };
     maskImage.onload = function () {
-        option.series[0].maskImage
-        chart.setOption(option);
+        option9.series[0].maskImage
+        chart.setOption(option9);
     }
-    maskImage.src = '../pages/logo.png';
+    maskImage.src = '../../images/logo.png';
     window.onresize = function () {
         chart.resize();
     }

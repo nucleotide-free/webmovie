@@ -1,5 +1,5 @@
-var chartDom = document.getElementById('graph3');
-var myChart = echarts.init(chartDom);
+var chartDom3 = document.getElementById('graph3');
+var myChart3 = echarts.init(chartDom3);
 
 $.getJSON("./queryMovieTypeTimeNum", function (values) {
     console.log(values)
@@ -44,7 +44,7 @@ $.getJSON("./queryMovieTypeTimeNum", function (values) {
         series: series
     }
 
-    myChart.setOption(option3);
+    myChart3.setOption(option3);
     //this.option.series = series;   // 数据设置
 
 });

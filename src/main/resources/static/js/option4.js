@@ -1,5 +1,5 @@
-var chartDom = document.getElementById('graph4');
-var myChart = echarts.init(chartDom);
+var chartDom4 = document.getElementById('graph4');
+var myChart4 = echarts.init(chartDom4);
 
 $.getJSON("./queryMovieAreaNum",function(values){
 
@@ -19,7 +19,7 @@ $.getJSON("./queryMovieAreaNum",function(values){
         }
     }
     bufData.push(othersData)
-    option = {
+    let option4 = {
         title: {
             text: '各地区电影数量比例',
             left: 'center'
@@ -48,6 +48,6 @@ $.getJSON("./queryMovieAreaNum",function(values){
         ]
     };
 
-    option && myChart.setOption(option);
+    option4 && myChart4.setOption(option4);
 
 })
