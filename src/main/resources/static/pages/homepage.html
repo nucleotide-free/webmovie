@@ -4,22 +4,176 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Echarts练习</title>
     <script src="../js/echarts.min.js"></script>
-<!--    <style type="text/css" media="all">-->
-<!--        @import "static/css/homepage.css";-->
-<!--    </style>-->
-    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="../pages/css/homepage.css">
 </head>
 <body>
 <div id="page-container">
     <div id="top_logo">
         <div id="right-top">
+            <input type="text" name="t1" id="t1" placeholder="给你的旅行留一个念想"/>
             <ul>
-                <li id="home" title="主页"><a href="homepage.html"></a></li>
-                <li id="community" title="社区"><a href="community_home.jsp"></a></li>
+                <li id="search" title="搜索"><a href="#"></a></li>
+                <li id="home" title="主页"><a href="main.jsp">&nbsp</a></li>
+                <li id="community" title="社区"><a href="community_home.jsp">&nbsp</a></li>
                 <li id="shop" title="特产文创"><a href="Shop_home.jsp"></a></li>
                 <li id="account" title="个人中心"><a href="<%=accountHref %>"></a></li>
             </ul>
         </div>
+    </div>
+
+    <div id="main-nav">
+        <ul>
+            <li class="dropdown"><a class="dropbtn" href="homepage.html">首页 HOME</a></li>
+            <li class="dropdown"><a class="dropbtn" href="homepage.html">选电影</a></li>
+            <li class="dropdown"><a class="dropbtn" href="homepage.html">排行榜</a></li>
+            <li class="dropdown"><a class="dropbtn" href="#">定制文创</a>
+                <div class="drop-down-content">
+                    <div class="drop-down-image">
+                        <img src="../images/nav/cards.png" height="300px"/>
+                    </div>
+                    <div class="drop-down-word">
+                        <div class="1stlist">
+                            <ul>
+                                <li><a href="#">中国结 Chinese Knot</a></li>
+                                <li><a href="#">书签 Bookmark</a></li>
+                                <li><a href="#">明信片 Postcard</a></li>
+                                <li><a href="#">信封信纸 Envelope</a></li>
+                            </ul>
+                        </div>
+                        <div class="2ndlist">
+                            <ul>
+                                <li><a href="#"><br/>印章邮票 Stamp</a></li>
+                                <li><a href="#">胶带 Tape</a></li>
+                                <li><a href="#">手账本 Book</a></li>
+                                <li><a href="#">日历 Calendar</a></li>
+                                <li><a href="#">钥匙扣 Keychains</a></li>
+                            </ul>
+                        </div>
+                        <div class="3rdlist">
+                            <ul>
+                                <li><a href="#"><br/> <br/>胸针 Brooch</a></li>
+                                <li><a href="#">礼品袋 Bag</a></li>
+                                <li><a href="#">手机壳 Iphone Case</a></li>
+                                <li><a href="#">便利贴 Note</a></li>
+                                <li><a href="#">其他 Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn" href="#">零食馋嘴</a>
+                <div class="drop-down-content">
+                    <div class="drop-down-image">
+                        <img src="../images/nav/snack.png" height="300px"/>
+                    </div>
+                    <div class="drop-down-word">
+                        <div class="1stlist">
+                            <ul>
+                                <li><a href="#">零食大礼包 Snack</a></li>
+                                <li><a href="#">特产专供 Specialty</a></li>
+                                <li><a href="#">新品尝鲜 New</a></li>
+                            </ul>
+                        </div>
+                        <div class="2ndlist">
+                            <ul>
+                                <li><a href="#"><br/>茶饮冲饮 Tea</a></li>
+                                <li><a href="#">果干蜜饯 Dried Fruit</a></li>
+                                <li><a href="#">肉类卤味 Meat</a></li>
+                                <li><a href="#">饼干膨化 Biscuit</a></li>
+                            </ul>
+                        </div>
+                        <div class="3rdlist">
+                            <ul>
+                                <li><a href="#"><br/> <br/>珍馐海味 Seafood</a></li>
+                                <li><a href="#">糖巧果冻 Candy</a></li>
+                                <li><a href="#">糕点点心 Cake</a></li>
+                                <li><a href="#">其他 Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn" href="#">生活家居</a>
+                <div class="drop-down-content">
+                    <div class="drop-down-image">
+                        <img src="../images/nav/furniture.png" height="300px"/>
+                    </div>
+                    <div class="drop-down-word">
+                        <div class="1stlist">
+                            <ul>
+                                <li><a href="#">餐具 Tableware</a></li>
+                                <li><a href="#">床品 Bed Stuff</a></li>
+                                <li><a href="#">地毯桌布 Carpet</a></li>
+                            </ul>
+                        </div>
+                        <div class="2ndlist">
+                            <ul>
+                                <li><a href="#"><br/>抱枕玩偶 Doll</a></li>
+                                <li><a href="#">饮茶先 Tea Set</a></li>
+                                <li><a href="#">厨房用品 Kitchen</a></li>
+                            </ul>
+                        </div>
+                        <div class="3rdlist">
+                            <ul>
+                                <li><a href="#"><br/> <br/>家居装饰 Decoration</a></li>
+                                <li><a href="#">收纳整理 Storage</a></li>
+                                <li><a href="#">其他 Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn" href="#">衣装零饰</a>
+                <div class="drop-down-content">
+                    <div class="drop-down-image">
+                        <img src="../images/nav/clothes.png" height="300px"/>
+                    </div>
+                    <div class="drop-down-word">
+                        <div class="1stlist">
+                            <ul>
+                                <li><a href="#">上装 Tops</a></li>
+                                <li><a href="#">下装 Bottoms</a></li>
+                                <li><a href="#">外套 Coat</a></li>
+                            </ul>
+                        </div>
+                        <div class="2ndlist">
+                            <ul>
+                                <li><a href="#"><br/>裙装 Dress</a></li>
+                                <li><a href="#">鞋子 Shoes</a></li>
+                                <li><a href="#">袜子 Socks</a></li>
+                            </ul>
+                        </div>
+                        <div class="3rdlist">
+                            <ul>
+                                <li><a href="#"><br/> <br/>饰品 Accessories</a></li>
+                                <li><a href="#">帽子 Hats</a></li>
+                                <li><a href="#">其他 Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">影视分类</a></li>
+            <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">年度榜单</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div class="recommendation">
+            <h1>每日推荐</h1>
+        </div>
+
+        <div class="top-10">
+            <h1>Top 10</h1>
+        </div>
+
+        <div class="recommendation">
+            <h1>热门推荐</h1>
+        </div>
+    </div>
+
+    <div id ="side">
+
     </div>
 </div>
 </body>
