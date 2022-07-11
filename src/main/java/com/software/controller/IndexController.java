@@ -12,7 +12,7 @@ public class IndexController {
     @RequestMapping(value = "/")
     public String gotoIndex(){
         //return "pages/login.html";
-        //return "pages/productresultpage1.html";
+        //return "pages/page1.html";
         return "pages/page9.html";
     }
 }

@@ -59,8 +59,7 @@
         select runtime, vote_average
         from movies_time_vote
     </select>
-
-
+    <!--9-->
     <select id="queryKeywords" resultType="map">
         select name,value
         from movies_keywords
