@@ -33,6 +33,7 @@ body, #page-container {
     height: 100%;
     float: right;
     text-align: right;
+    border-bottom: #0C0C0C 2px;
 }
 #right-top a {
     text-decoration:none;
@@ -72,33 +73,7 @@ body, #page-container {
     cursor:pointer;
     transition: 0.15s all ease;
 }
-#search {
-    background-image:url(../../images/nav/search1.svg);
-}
-#search:hover {
-    background-image:url(../../images/nav/search2.svg);
-}
-#home {
-    background-image:url(../../images/nav/home1.svg);
-}
-#home:hover {
-    background-image:url(../../images/nav/home2.svg);
-}
-#community {
-    background-image:url(../../images/nav/community1.svg) ;
-}
-#community:hover {
-    background-image:url(../../images/nav/community2.svg);
-}
-#shop {
-    background-image:url(../../images/nav/cart2.svg);
-}
-#account {
-    background-image:url(../../images/nav/account1.svg);
-}
-#account:hover {
-    background-image:url(../../images/nav/account2.svg);
-}
+
 
 #main-nav {
     padding-top: 100px;
@@ -124,7 +99,11 @@ body, #page-container {
     text-decoration: none;
     transition: .15s all ease;
 }
+#container {
+    height: 500px;
+    width: 500px;
 
+}
 .dropdown {
     float: left;
     position: relative;
