@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.software.dao.UserEntityMapper">
+
+    <!--1-->
+    <select id="queryMovieTypeNum" resultType="map">
+        select name, num
+        from movies_type_num
+    </select>
+
+    <!--2-1-->
+    <select id="queryMovieYearNum" resultType="map">
+        select year, num
+        from movies_years_num
+        order by year asc
+    </select>
+
+    <!--2-2-->
+    <select id="queryMovieYearRevenue" resultType="map">
+        select year, revenue
+        from movies_years_num
+        order by year asc
+    </select>
+
+    <!--3-->
+    <select id="queryMovieTypeTimeNum" resultType="map">
+        select type, year, num
+        from movies_type_time_num
+        order by year
+    </select>
+
+    <!--4-->
+    <select id="queryMovieAreaNum" resultType="map">
+        select name, num
+        from movies_area_num
+        order by num asc
+    </select>
+
+    <!--5-->
+    <select id="queryMovieTypeRevenue" resultType="map">
+        select type, revenue
+        from movies_type_revenue
+    </select>
+
+    <!--6-->
+    <select id="queryMovieTypeVote" resultType="map">
+        select type, vote
+        from movies_type_vote
+    </select>
+
+    <!--7-->
+    <select id="queryMovieTimeRevenue" resultType="map">
+        select time, revenue
+        from movies_time_revenue
+        order by time asc
+    </select>
+
+    <!--8-->
+    <select id="queryMovieTimeVote" resultType="map">
+        select time, vote
+        from movies_time_vote
+        order by time asc
+    </select>
+    <!--9-->
+    <select id="queryKeywords" resultType="map">
+        select name,value
+        from movies_keywords
+    </select>
+
+</mapper>
