@@ -6,6 +6,7 @@
     <select id="queryMovieTypeNum" resultType="map">
         select name, num
         from movies_type_num
+        order by num asc
     </select>
 
     <!--2-1-->

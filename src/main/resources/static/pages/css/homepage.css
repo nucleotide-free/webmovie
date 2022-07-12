@@ -99,7 +99,7 @@ body, #page-container {
 
 .chart-content{
     width: 100%;
-    margin-top: 10px;
+    margin-bottom: 40px;
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
     box-shadow: 0 0 50px -30px rgba(0, 0, 0, 0.85);
@@ -109,6 +109,7 @@ body, #page-container {
     padding: 10px;
     font-size: 20px;
     font-weight: bold;
+    letter-spacing:2px;
     color: white;
     border-top-left-radius: 14px;
     border-top-right-radius: 16px;
@@ -116,9 +117,19 @@ body, #page-container {
     background-color: #008B00;
 }
 .chart-content .chart-graph{
-    width: 1300px;
+    width: 1343px;
     height: 500px;
 }
 .chart-change{
     float: right;
+    margin: 0 10px 0 auto;
+    font-size: 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor:pointer;
+}
+.chart-change img{
+    vertical-align: middle;
+    margin-right: 4px;
 }
