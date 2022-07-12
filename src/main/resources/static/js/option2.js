@@ -4,35 +4,36 @@ var Chart2_1 = echarts.init(chartDom2_1);
 var chartDom2_2 = document.getElementById('graph2-2');
 var Chart2_2 = echarts.init(chartDom2_2);
 
-$.getJSON("./queryMovieYearNum",function(values){
+$.getJSON("./queryMovieYearNum", function (values) {
 
+    let i;
     var xAxis = ['1900年前']
     var yAxis = [0]
-    for(var i =1901 ;i<2021;i += 10){
-        var str = i.toString() + "-" + (i+9).toString()
+    for (i = 1901; i < 2021; i += 10) {
+        let str = i.toString() + "-" + (i + 9).toString();
         xAxis.push(str)
         yAxis.push(0)
     }
-    for(var i=0;i<values.data.length;i++){
+    for (i = 0; i < values.data.length; i++) {
         var year = parseInt(values.data[i]['year'])
         var num = values.data[i]['num']
-        if(year < 1900){
+        if (year < 1900) {
             yAxis[0] += num
-        }else{
-            yAxis[(year-1901)/10+1] += num
+        } else {
+            yAxis[(year - 1901) / 10 + 1] += num
         }
     }
 
     let option2_1 = {
         title: {
             text: '电影数量与年份的关系',
-            x: 'center' ,
-            y: 'bottom' ,
-            backgroundColor: 'rgba(0,0,0,0)' ,
+            x: 'center',
+            y: 'bottom',
+            backgroundColor: 'rgba(0,0,0,0)',
             padding: 30, // 标题内边距，单位px，默认各方向内边距为5，
             textStyle: {
                 fontSize: 20,
-                fontWeight: 'bolder' ,
+                fontWeight: 'bolder',
                 color: '#333' // 主标题文字颜色
             },
         },
@@ -53,7 +54,7 @@ $.getJSON("./queryMovieYearNum",function(values){
                 color: "#000000",
                 fontSize: 13,
                 fontWeight: 600,
-                fontFamily:'Microsoft YaHei'
+                fontFamily: 'Microsoft YaHei'
             },
             nameGap: 20,					//---坐标轴名称与轴线之间的距离
         },
@@ -64,12 +65,12 @@ $.getJSON("./queryMovieYearNum",function(values){
                 color: "#000000",
                 fontSize: 13,
                 fontWeight: 600,
-                fontFamily:'Microsoft YaHei'
+                fontFamily: 'Microsoft YaHei'
             },
             nameGap: 25,					//---坐标轴名称与轴线之间的距离
         },
-        grid:{
-            bottom:100,
+        grid: {
+            bottom: 100,
         },
         series: [
             {
@@ -86,21 +87,24 @@ $.getJSON("./queryMovieYearNum",function(values){
                 type: 'bar',
                 itemStyle: {
                     borderRadius: [3, 3, 0, 0], // 柱体宽度
-                    color: 'rgba(35,150,206,0.8)', // 未选中柱颜色
+                    color: 'rgba(83,111,196,0.8)', // 未选中柱颜色
 
                 },// '#91cd77', '#ef6567', '#f9c956', '#75bedc
                 emphasis: {
                     itemStyle: {
-                        color: 'rgba(31,150,53,0.8)' // 选中柱颜色
+                        color: 'rgba(27,47,96,0.8)' // 选中柱颜色
                     }
                 }
             },
         ]
     };
     Chart2_1.setOption(option2_1);
+})
 
-    var xAxis2 = ['1950年前']
-    var yAxis2 = [0]
+$.getJSON("./queryMovieYearRevenue",function(values){
+
+    var xAxis = ['1950年前']
+    var yAxis = [0]
     for(var i =1951 ;i<2021;i += 5){
         var str = i.toString() + "-" + (i+4).toString()
         xAxis.push(str)
@@ -108,7 +112,7 @@ $.getJSON("./queryMovieYearNum",function(values){
     }
     for(var i=0;i<values.data.length;i++){
         var year = parseInt(values.data[i]['year'])
-        var revenue = values.data[i]['revenue']
+        var revenue = values.data[i]['revenue']/10000000
         if(year < 1950){
             yAxis[0] += revenue
         }else{
@@ -117,23 +121,80 @@ $.getJSON("./queryMovieYearNum",function(values){
     }
 
     let option2_2 = {
+        title: {
+            text: '电影票房与年份的关系',
+            x: 'center',
+            y: 'bottom',
+            backgroundColor: 'rgba(0,0,0,0)',
+            padding: 30, // 标题内边距，单位px，默认各方向内边距为5，
+            textStyle: {
+                fontSize: 20,
+                fontWeight: 'bolder',
+                color: '#333' // 主标题文字颜色
+            },
+        },
+        tooltip: {//提示框
+            trigger: 'item', // 触发类型，默认数据触发，见下图，可选为：'item' ¦ 'axis'
+            showDelay: 20, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+            hideDelay: 80, // 隐藏延迟，单位ms
+            transitionDuration: 0.4, // 动画变换时间，单位s
+            backgroundColor: 'rgba(255,255,255,0.8)', // 提示背景颜色，默认为透明度为0.7的黑色
+            borderColor: 'rgba(29,76,105,0.81)', // 提示边框颜色
+            borderWidth: 2, // 提示边框线宽，单位px，默认为0（无边框）
+        },
+        grid: {
+            bottom: 100,
+        },
         xAxis: {
             type: 'category',
-            axisLabel: {
-                interval:0,
+            data: xAxis,
+            name: '年份/年',
+            nameTextStyle: {				//---坐标轴名称样式
+                color: "#000000",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: 'Microsoft YaHei'
             },
-            data: xAxis2
+            nameGap: 20,					//---坐标轴名称与轴线之间的距离
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            name: '票房/千万美元',
+            nameTextStyle: {				//---坐标轴名称样式
+                color: "#000000",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: 'Microsoft YaHei'
+            },
+            nameGap: 25,					//---坐标轴名称与轴线之间的距离
         },
-
         series: [
             {
-                data: yAxis2,
-                type: 'bar'
+                data: yAxis,
+                type: 'bar',
+                itemStyle: {
+                    borderRadius: [3, 3, 0, 0], // 柱体宽度
+                    color: 'rgba(83,111,196,0.8)', // 未选中柱颜色
+
+                },
+                emphasis: {
+                    itemStyle: {
+                        color: 'rgba(32,49,93,0.8)' // 选中柱颜色
+                    }
+                }
             }
         ]
     };
     Chart2_2.setOption(option2_2);
 })
+
+let btn2 = document.getElementById("switch2")
+btn2.onclick = function () {
+    if (document.getElementById("graph2").style.display == "block") {
+        document.getElementById("graph2").style.display = "none"
+        document.getElementById("graph2-2").style.display = "block"
+    } else {
+        document.getElementById("graph2").style.display = "block"
+        document.getElementById("graph2-2").style.display = "none"
+    }
+}

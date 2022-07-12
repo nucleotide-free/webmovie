@@ -38,18 +38,9 @@ $.getJSON("./queryMovieTypeNum",function(values){
             backgroundColor: 'rgba(255,255,255,0.7)', // 提示背景颜色，默认为透明度为0.7的黑色
             borderColor: 'rgba(67,185,114,0.81)', // 提示边框颜色
             borderWidth: 2, // 提示边框线宽，单位px，默认为0（无边框）
-            axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                type: 'line', // 默认为直线，可选为：'line' | 'shadow'
-                lineStyle: { // 直线指示器样式设置
-                    color: '#48b',
-                    width: 2,
-                    type: 'solid'
-                },
-                shadowStyle : { // 阴影指示器样式设置
-                    width: 'auto' , // 阴影大小
-                    color: 'rgba(150,150,150,0.3)' // 阴影颜色
-                }
-            }
+        },
+        grid:{
+          bottom: 140,
         },
         xAxis: {
             type: 'category',
@@ -76,7 +67,6 @@ $.getJSON("./queryMovieTypeNum",function(values){
                     type: 'solid',
                 },
             },
-
         },
         yAxis: {
             type: 'value',
@@ -100,7 +90,7 @@ $.getJSON("./queryMovieTypeNum",function(values){
                 },
                 emphasis: {
                     itemStyle: {
-                        color: 'rgba(243,131,73,0.87)' // 选中柱颜色
+                        color: 'rgba(14,72,37,0.81)' // 选中柱颜色
                     }
                 }
             }
@@ -124,11 +114,11 @@ $.getJSON("./queryMovieTypeNum",function(values){
             trigger: 'item'
         },
         legend: {//图例
-            top: 20,
+            top: 40,
             bottom: 20,
             left: 20,
             orient: 'vertical',
-            itemGap: 20,
+            itemGap: 24,
             itemHeight: 20,
             itemStyle: {
                 shadowBlur: 3,
@@ -177,7 +167,7 @@ $.getJSON("./queryMovieTypeNum",function(values){
                 name: '电影数量',
                 type: 'pie',
                 data: bufData,
-                radius: '50%',
+                radius: '60%',
                 center: ['50%', '50%'],
                 labelLine: {
                     smooth: 0.2,
@@ -190,26 +180,30 @@ $.getJSON("./queryMovieTypeNum",function(values){
                     normal: {
                         color: function (colors) {// '#91cd77', '#ef6567', '#f9c956', '#75bedc
                             const colorList = [
-                                'rgba(4,14,1,0.8)',
                                 'rgba(12,37,3,0.8)',
                                 'rgba(12,52,0,0.8)',
                                 'rgba(15,73,0,0.8)',
                                 'rgba(15,89,1,0.8)',
                                 'rgba(22,108,5,0.8)',
+
+                                '#228B22',
                                 'rgba(33,152,9,0.8)',
                                 'rgba(62,150,49,0.8)',
                                 'rgba(95,178,83,0.8)',
+                                '#00C78C',
+
                                 'rgba(16,199,40,0.8)',
                                 'rgba(95,222,45,0.8)',
                                 'rgba(100,201,89,0.8)',
                                 'rgba(136,192,130,0.8)',
                                 'rgba(93,157,88,0.8)',
-                                'rgba(126,176,115,0.8)',
+
+                                '#94C8A8',
                                 'rgba(103,211,139,0.8)',
-                                'rgba(194,239,158,0.8)',
-                                'rgba(173,238,160,0.8)',
-                                'rgba(185,217,181,0.8)',
-                                'rgba(225,241,220,0.8)',
+                                'rgba(121,199,106,0.8)',
+                                'rgba(136,206,128,0.8)',
+                                'rgba(188,239,175,0.8)',
+
                             ];
                             return colorList[colors.dataIndex];
                         }

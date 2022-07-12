@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化展示</title>
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/echarts.min.js"></script>
+</head>
+<body>
+
+    <h1>2-各年份电影数量</h1>
+    <div id="chart-2-year-num" style="width: 1300px;height: 600px"></div>
+    <script type="text/javascript">
+
+        var chartDom = document.getElementById('chart-2-year-num');
+        var Chart2_1 = echarts.init(chartDom);
+
+        $.getJSON("./queryMovieYearNum",function(values){
+
+            var xAxis = ['1900年前']
+            var yAxis = [0]
+            for(var i =1901 ;i<2021;i += 10){
+                var str = i.toString() + "-" + (i+9).toString()
+                xAxis.push(str)
+                yAxis.push(0)
+            }
+            for(var i=0;i<values.data.length;i++){
+                var year = parseInt(values.data[i]['year'])
+                var num = values.data[i]['num']
+                if(year < 1900){
+                    yAxis[0] += num
+                }else{
+                    yAxis[(year-1901)/10+1] += num
+                    // xAxis.push(year.toString())
+                    // yAxis.push(num)
+                }
+            }
+
+            let option2_1;
+            option2_1 = {
+                xAxis: {
+                    type: 'category',
+                    axisLabel: {
+                        interval:0,
+                        // rotate:40
+                    },
+                    data: xAxis
+                },
+                yAxis: {
+                    type: 'value'
+                },
+
+                series: [
+                    {
+                        data: yAxis,
+                        type: 'bar'
+                    }
+                ]
+            };
+            Chart2_1.setOption(option2_1);
+    })
+</script>
+
+
+    <h1>2-各年份电影票房</h1>
+    <div id="chart-2-year-revenue" style="width: 1300px;height: 600px"></div>
+    <script type="text/javascript">
+
+        var chartDom = document.getElementById('chart-2-year-revenue');
+        var Chart2_2 = echarts.init(chartDom);
+
+        $.getJSON("./queryMovieYearRevenue",function(values){
+
+            var xAxis = ['1950年前']
+            var yAxis = [0]
+            for(var i =1951 ;i<2021;i += 5){
+                var str = i.toString() + "-" + (i+4).toString()
+                xAxis.push(str)
+                yAxis.push(0)
+            }
+            for(var i=0;i<values.data.length;i++){
+                var year = parseInt(values.data[i]['year'])
+                var revenue = values.data[i]['revenue']
+                if(year < 1950){
+                    yAxis[0] += revenue
+                }else{
+                    yAxis[(year-1951)/5+1] += revenue
+                }
+            }
+
+            let option2_2 = {
+                xAxis: {
+                    type: 'category',
+                    axisLabel: {
+                        interval:0,
+                        // rotate:40
+                    },
+                    data: xAxis
+                },
+                yAxis: {
+                    type: 'value'
+                },
+
+                series: [
+                    {
+                        data: yAxis,
+                        type: 'bar'
+                    }
+                ]
+            };
+            Chart2_2.setOption(option2_2);
+        })
+    </script>
+</body>
+</html>

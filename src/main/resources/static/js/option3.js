@@ -25,21 +25,54 @@ $.getJSON("./queryMovieTypeTimeNum", function (values) {
         series.push({   // 每个快递品牌，对应一条折线图
             name: u,
             type: 'line',
+            symbol: 'none',
             data: _data,   // 每个快递品牌，对应的横坐标的值组成的数组
+
         })
     }
 
 
     let option3 = {
-        tooltip: {},
-        legend: {
+        tooltip: {
+            trigger: 'axis',
+            textStyle:{
+                align:'left'
+            }
+        },
+        legend: {//图例
+            top: 20,
+            bottom: 20,
+            left: 40,
+            right:40,
+            itemHeight:14,
+            itemGap: 20,
+        },
+        grid:{
+            top:140,
+            containLabel: true,
         },
         xAxis: {
             type: 'category',
-            data: yearList
+            data: yearList,
+            name:'年份/年',
+            nameTextStyle: {				//---坐标轴名称样式
+                color: "#000000",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: 'Microsoft YaHei'
+            },
+            nameGap: 25,					//---坐标轴名称与轴线之间的距离
         },
         yAxis: {
-            type: 'value'
+            type: 'value',
+            name:'数量/万部',
+            nameTextStyle: {				//---坐标轴名称样式
+                color: "#000000",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: 'Microsoft YaHei'
+            },
+            nameGap: 25,					//---坐标轴名称与轴线之间的距离
         },
         series: series
     }
