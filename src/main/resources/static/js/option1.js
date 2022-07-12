@@ -3,7 +3,7 @@ var myChart1 = echarts.init(chartDom1);
 var chartDom1_2 = document.getElementById('graph1-2');
 var myChart1_2 = echarts.init(chartDom1_2);
 
-$.getJSON("./queryMovieTypeNum",function(values){
+$.getJSON("/queryMovieTypeNum",function(values){
     var xAxis = []
     var yAxis = []
     for(var i=0;i<values.data.length;i++){

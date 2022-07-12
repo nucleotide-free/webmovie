@@ -1,7 +1,7 @@
 var chartDom3 = document.getElementById('graph3');
 var myChart3 = echarts.init(chartDom3);
 
-$.getJSON("./queryMovieTypeTimeNum", function (values) {
+$.getJSON("/queryMovieTypeTimeNum", function (values) {
     console.log(values)
 
     //横坐标 所有year

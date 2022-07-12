@@ -1,7 +1,7 @@
 var chartDom4 = document.getElementById('graph4');
 var myChart4 = echarts.init(chartDom4);
 
-$.getJSON("./queryMovieAreaNum",function(values){
+$.getJSON("/queryMovieAreaNum",function(values){
 
     var bufData = []
     var othersData = {}
@@ -82,18 +82,18 @@ $.getJSON("./queryMovieAreaNum",function(values){
                     normal: {
                         color: function (colors) {// '#91cd77', '#ef6567', '#f9c956', '#75bedc
                             const colorList = [
-                                '#66A4A1',
-                                '#9F90C8',
-                                '#94C8A8',
-                                '#EE6666',
-                                '#73C0DE',
-                                '#3BA272',
-                                '#FC8452',
-                                '#9A60B4',
-                                '#EA7CCC',
-                                '#5470C6',
-                                '#91CC75',
-                                '#FAC858',
+                                '#340606',
+                                '#4b0e0e',
+                                '#5d1f1f',
+                                '#771a1a',
+                                '#8d1111',
+                                '#a91212',
+                                '#b72020',
+                                '#bb3535',
+                                '#d04747',
+                                '#c65454',
+                                '#c77f7f',
+                                '#eed1d1',
                             ];
                             return colorList[colors.dataIndex];
                         }

@@ -1,7 +1,7 @@
 var chartDom8 = document.getElementById('graph8');
 var myChart8 = echarts.init(chartDom8);
 
-$.getJSON("./queryMovieTimeVote",function(values){
+$.getJSON("/queryMovieTimeVote",function(values){
 
     var bufData = []
     for(var i=0;i<values.data.length;i++){
