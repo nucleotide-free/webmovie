@@ -6,6 +6,7 @@
     <select id="queryMovieTypeNum" resultType="map">
         select name, num
         from movies_type_num
+        order by num asc
     </select>
 
     <!--2-1-->
@@ -52,6 +53,7 @@
     <select id="queryMovieTimeRevenue" resultType="map">
         select time, revenue
         from movies_time_revenue
+        where revenue between 1 and 1500000000
         order by time asc
     </select>
 
@@ -59,6 +61,7 @@
     <select id="queryMovieTimeVote" resultType="map">
         select time, vote
         from movies_time_vote
+        where (time between 1 and 600) and vote > 0
         order by time asc
     </select>
     <!--9-->
