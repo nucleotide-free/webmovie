@@ -69,5 +69,9 @@
         select name,value
         from movies_keywords
     </select>
-
+    <!--请求电影列表-->
+    <select id="queryMoviesList" resultType="map">
+        select id, overview,title,title,release_date,runtime,vote_average,poster_path
+        from movies
+    </select>
 </mapper>

@@ -157,4 +157,13 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
+
+    @RequestMapping(value = "/queryMoviesList")
+    public HttpResponseEntity queryMoviesList() {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Object> result = projectService.queryMoviesList();
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
 }

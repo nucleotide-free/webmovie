@@ -1,6 +1,6 @@
 
 var chart = echarts.init(document.getElementById('graph9'));
-$.getJSON("./queryKeywords",function(values) {
+$.getJSON("/queryKeywords",function(values) {
     var bufData = []
     for (var i = 0; i < values.data.length; i++) {
         var jsonData = {}

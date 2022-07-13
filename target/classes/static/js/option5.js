@@ -1,7 +1,7 @@
 var chartDom5 = document.getElementById('graph5');
 var myChart5 = echarts.init(chartDom5);
 
-$.getJSON("./queryMovieTypeRevenue",function(values){
+$.getJSON("/queryMovieTypeRevenue",function(values){
 
     var xAxis = []
     var yAxis = []

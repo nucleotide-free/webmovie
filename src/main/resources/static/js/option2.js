@@ -4,7 +4,7 @@ var Chart2_1 = echarts.init(chartDom2_1);
 var chartDom2_2 = document.getElementById('graph2-2');
 var Chart2_2 = echarts.init(chartDom2_2);
 
-$.getJSON("./queryMovieYearNum", function (values) {
+$.getJSON("/queryMovieYearNum", function (values) {
 
     let i;
     var xAxis = ['1900年前']

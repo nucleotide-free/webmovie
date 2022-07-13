@@ -1,7 +1,7 @@
 var chartDom6 = document.getElementById('graph6');
 var myChart6 = echarts.init(chartDom6);
 
-$.getJSON("./queryMovieTypeVote",function(values){
+$.getJSON("/queryMovieTypeVote",function(values){
 
     var xAxis = []
     var yAxis = []

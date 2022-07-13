@@ -20,4 +20,5 @@ public interface ProjectEntityMapper {
    List<Map<String,Object>> queryMovieTimeRevenue();//7
    List<Map<String,Object>> queryMovieTimeVote();//8
     List<Map<String, Object>> queryKeywords();//9
+    List<Map<String, Object>> queryMoviesList();
 }

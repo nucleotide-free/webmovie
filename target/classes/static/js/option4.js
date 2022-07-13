@@ -1,7 +1,7 @@
 var chartDom4 = document.getElementById('graph4');
 var myChart4 = echarts.init(chartDom4);
 
-$.getJSON("./queryMovieAreaNum",function(values){
+$.getJSON("/queryMovieAreaNum",function(values){
 
     var bufData = []
     var othersData = {}

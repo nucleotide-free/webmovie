@@ -1,10 +1,7 @@
 package com.software.service.impl;
 
 import com.software.service.ProductResultService;
-import com.software.utils.DateUtil;
 import com.software.dao.ProjectEntityMapper;
-import com.software.beans.ProdcutResultEntity;
-import com.software.utils.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,5 +79,15 @@ public class ProductResultServiceImpl implements ProductResultService {
     public List<Map<String, Object>> queryKeywords() {
         List<Map<String,Object>> result = projectEntityMapper.queryKeywords();
         return result;
+    }
+
+    @Override
+    public List<Object> queryMoviesList() {//获取电影列表
+        List<Object> resultList = new ArrayList<Object>();
+        List<Map<String,Object>> proResult = projectEntityMapper.queryMoviesList();
+        for(Map<String,Object> proObj : proResult) {
+            resultList.add(proObj);
+        }
+        return resultList;
     }
 }
