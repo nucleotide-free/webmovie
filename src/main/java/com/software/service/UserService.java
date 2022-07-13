@@ -1,9 +1,17 @@
 package com.software.service;
 
 import com.software.dao.Entity.UserEntity;
-import java.util.*;
+import com.software.dao.UserEntityMapper;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
     public List<UserEntity> selectUserInfo(UserEntity userEntity);
+
+   int insertUserInfo(UserEntity userEntity);
 }

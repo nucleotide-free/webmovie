@@ -9,6 +9,25 @@
         WHERE userName = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
     </select>
 
-
+    <!--创建用户的基本信息-->
+    <insert id="insertUserInfo" parameterType="map">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                userName,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 
 </mapper>

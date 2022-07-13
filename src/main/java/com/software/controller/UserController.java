@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
-
 @RestController
 public class UserController {
 
@@ -25,7 +24,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
     /**
      * 用户登录
      * @param
@@ -48,6 +46,23 @@ public class UserController {
         return httpResponseEntity;
     }
 
+
+    @RequestMapping(value="/userSignUp",method= RequestMethod.POST, headers = "Accept=application/json")
+    public HttpResponseEntity userSignUp(@RequestBody UserEntity userEntity) {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        int hasUser = userService.insertUserInfo(userEntity);
+        if(hasUser >0) {
+            httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+            httpResponseEntity.setData(hasUser);
+            httpResponseEntity.setMessage(Constans.LOGIN_MESSAGE);
+            //       httpResponseEntity.setMessage(Constans.LOGIN_USERNAME_PASSWORD_MESSAGE);
+        }else {
+            httpResponseEntity.setCode(Constans.EXIST_CODE);
+            httpResponseEntity.setData(hasUser);
+            httpResponseEntity.setMessage(Constans.LOGIN_MESSAGE);
+        }
+        return httpResponseEntity;
+    }
 
 
 }
