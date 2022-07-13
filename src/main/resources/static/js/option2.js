@@ -30,7 +30,7 @@ $.getJSON("/queryMovieYearNum", function (values) {
             x: 'center',
             y: 'bottom',
             backgroundColor: 'rgba(0,0,0,0)',
-            padding: 30, // 标题内边距，单位px，默认各方向内边距为5，
+            padding: 20, // 标题内边距，单位px，默认各方向内边距为5，
             textStyle: {
                 fontSize: 20,
                 fontWeight: 'bolder',
@@ -55,6 +55,9 @@ $.getJSON("/queryMovieYearNum", function (values) {
                 fontSize: 13,
                 fontWeight: 600,
                 fontFamily: 'Microsoft YaHei'
+            },
+            axisLabel: {
+                interval: 0,
             },
             nameGap: 20,					//---坐标轴名称与轴线之间的距离
         },
@@ -101,7 +104,7 @@ $.getJSON("/queryMovieYearNum", function (values) {
     Chart2_1.setOption(option2_1);
 })
 
-$.getJSON("./queryMovieYearRevenue",function(values){
+$.getJSON("/queryMovieYearRevenue",function(values){
 
     var xAxis = ['1950年前']
     var yAxis = [0]
@@ -126,7 +129,7 @@ $.getJSON("./queryMovieYearRevenue",function(values){
             x: 'center',
             y: 'bottom',
             backgroundColor: 'rgba(0,0,0,0)',
-            padding: 30, // 标题内边距，单位px，默认各方向内边距为5，
+            padding: 20, // 标题内边距，单位px，默认各方向内边距为5，
             textStyle: {
                 fontSize: 20,
                 fontWeight: 'bolder',
@@ -151,9 +154,12 @@ $.getJSON("./queryMovieYearRevenue",function(values){
             name: '年份/年',
             nameTextStyle: {				//---坐标轴名称样式
                 color: "#000000",
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: 600,
                 fontFamily: 'Microsoft YaHei'
+            },
+            axisLabel: {
+                interval: 0,
             },
             nameGap: 20,					//---坐标轴名称与轴线之间的距离
         },
