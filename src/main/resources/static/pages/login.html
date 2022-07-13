@@ -6,6 +6,7 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="MSSmartTagsPreventParsing" content="true" />
     <link rel="stylesheet" href="../pages/css/login.css">
+
 </head>
 <body>
 <div class="container" id="container">
@@ -15,7 +16,7 @@
             <input id="SignUpName" type="text" placeholder="用户名" name="SignUpName"/>
             <input id="SignUpPassword" type="password" placeholder="密码" name="SignUpPassword"/>
             <input id="SignUpPassword2" type="password" placeholder="再次输入" name="SignUpPassword2"/>
-            <button type="submit" onclick="SignUp()" style="margin-top: 20px;">Sign Up</button>
+            <button  onclick="SignUp()" style="margin-top: 20px;">Sign Up</button>
         </form>
     </div>
 
@@ -25,7 +26,7 @@
             <input id="SignInName" type="text" placeholder="text" name="SignInName"/>
             <input id="SignInPassword" type="password" placeholder="Password" name="SignInPassword"/>
             <a href="#">Forgot your password?</a>
-            <button type="submit" onclick="SignIn()">Sign In</button>
+            <button onclick="SignIn()">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -49,4 +50,5 @@
     signInButton.addEventListener("click", ()=>{container.classList.remove("right-panel-active")});
 </script>
 </body>
+<script src="../pages/js/login.js"></script>
 </html>

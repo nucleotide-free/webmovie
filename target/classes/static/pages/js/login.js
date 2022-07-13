@@ -32,7 +32,7 @@ function SignUp(){
         "username": SignUpName.value,
         "password": SignUpPassword.value
     };
-    commonAjaxPost(true, "/queryMovieTypeNum", data, loginSuccess)
+  //  commonAjaxPost(true, "/queryMovieTypeNum", data, loginSuccess)
 
 }
 
@@ -53,6 +53,6 @@ function SignIn() {
         "username": UserNameText,
         "password": PasswordTest
     };
-    commonAjaxPost(true, "/admin/userLogin", da, loginSuccess)
+   // commonAjaxPost(true, "/admin/userLogin", da, loginSuccess)
 }
 

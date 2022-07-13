@@ -6,7 +6,7 @@
     <select id="selectUserInfo" parameterType="map" resultType="java.lang.String">
         select userId
         from user
-        WHERE userName = #{username,jdbcType=VARCHAR} and #{password,,jdbcType=VARCHAR}
+        WHERE userName = #{username,jdbcType=VARCHAR} and #{password,jdbcType=VARCHAR}
     </select>
 
 

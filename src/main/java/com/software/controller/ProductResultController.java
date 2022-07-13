@@ -22,7 +22,7 @@ import java.util.Map;
 @RestController
 public class ProductResultController {
 
-    private final Logger logger = LoggerFactory.getLogger(ProductResultController.class);
+    //private final Logger logger = LoggerFactory.getLogger(ProductResultController.class);
 
     @Autowired
     private ProductResultService projectService;
