@@ -12,4 +12,6 @@ import java.util.Map;
 public interface UserService {
 
     public List<UserEntity> selectUserInfo(UserEntity userEntity);
+
+   int insertUserInfo(UserEntity userEntity);
 }

@@ -27,4 +27,10 @@ public class UserServiceImpl implements UserService {
         List<UserEntity> user = userEntityMapper.selectUserInfo(userEntity);
         return user;
     }
+
+    @Override
+    public int insertUserInfo(UserEntity userEntity) {
+        int user = userEntityMapper.insertUserInfo(userEntity);
+        return user;
+    }
 }

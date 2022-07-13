@@ -13,4 +13,5 @@ public interface UserEntityMapper {
      * @return
      */
     List<UserEntity> selectUserInfo(UserEntity userEntity);
+  int insertUserInfo(UserEntity userEntity);
 }

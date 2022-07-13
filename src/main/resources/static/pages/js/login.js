@@ -8,7 +8,7 @@ var SignInPassword = document.getElementById("SignInPassword");
 
 //注册
 function SignUp() {
-    alert("用户名不能为空！");
+
     if (!SignUpName.value) {
         alert("用户名不能为空！");
         SignUpName.focus();
@@ -34,7 +34,7 @@ function SignUp() {
         "username": SignUpName.value,
         "password": SignUpPassword.value
     };
-    commonAjaxPost(true, "/userSignIn", data, signUpSuccess)
+    commonAjaxPost(true, "/userSignUp", data, signUpSuccess)
 
 }
 
@@ -63,6 +63,20 @@ function loginSuccess(result) {
     console.log(result)
     if (result.code == '666') {
       //  layer.msg(result.message, { icon: 1 });
+        setCookie('isLogin', '1');
+        setCookie('userId', result.data.id);
+        setCookie('userName', SignInName.value);
+        window.location.href = "homepage.html"
+    } else {
+        alert("八嘎");
+    }
+}
+
+//注册成功回调
+function signUpSuccess(result) {
+    console.log(result)
+    if (result.code == '666') {
+        //  layer.msg(result.message, { icon: 1 });
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
