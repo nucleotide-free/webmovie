@@ -101,7 +101,7 @@ $.getJSON("/queryMovieYearNum", function (values) {
     Chart2_1.setOption(option2_1);
 })
 
-$.getJSON("./queryMovieYearRevenue",function(values){
+$.getJSON("/queryMovieYearRevenue",function(values){
 
     var xAxis = ['1950年前']
     var yAxis = [0]
@@ -190,7 +190,7 @@ $.getJSON("./queryMovieYearRevenue",function(values){
 
 let btn2 = document.getElementById("switch2")
 btn2.onclick = function () {
-    if (document.getElementById("graph2").style.display == "block") {
+    if (document.getElementById("graph2-2").style.display === "none") {
         document.getElementById("graph2").style.display = "none"
         document.getElementById("graph2-2").style.display = "block"
     } else {
