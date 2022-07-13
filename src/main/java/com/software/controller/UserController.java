@@ -16,8 +16,8 @@
 //     * @param
 //     * @return
 //     */
-//    @RequestMapping(value="/userLogin",method= RequestMethod.POST, headers = "Accept=application/json")
-//    public HttpResponseEntity userLogin(@RequestBody Map<String,Object> userInfo) {
+//    @RequestMapping(value="/userSignIn",method= RequestMethod.POST, headers = "Accept=application/json")
+//    public HttpResponseEntity userSignIn(@RequestBody Map<String,Object> userInfo) {
 //        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
 //        try {
 //
@@ -42,3 +42,5 @@
 //
 //
 //}
+//
+//
