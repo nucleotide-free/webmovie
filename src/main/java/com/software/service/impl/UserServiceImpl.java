@@ -12,11 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserEntityMapper userEntityMapper;
-
+    @Override
     /**
      * 查询用户信息
      *

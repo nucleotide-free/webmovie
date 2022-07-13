@@ -64,7 +64,7 @@ function loginSuccess(result) {
     if (result.code == '666') {
       //  layer.msg(result.message, { icon: 1 });
         setCookie('isLogin', '1');
-        setCookie('userId', result.data.getId());
+        setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
         window.location.href = "homepage.html"
     } else {

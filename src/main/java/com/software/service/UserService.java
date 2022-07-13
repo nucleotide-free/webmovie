@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@Service
+
 public interface UserService {
 
     public List<UserEntity> selectUserInfo(UserEntity userEntity);
