@@ -1,28 +1,10 @@
 @CHARSET "UTF-8";
 
-@font-face {
-    font-family: "Sucrose Bold Two";
-    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2") format("woff2");
-}
-@font-face {
-    font-family: "IM Fell French Canon Pro";
-    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/im-fell-french-canon-pro.woff2") format("woff2");
-}
-
 body, #page-container {
     text-align: center;
-    font-family: Candara, "Microsoft YaHei" ,sans-serif;
-    font-size: 16px;
     color: #1f1f1f;
-    background: white;
     margin: 0;
     padding: 0;
-    over-flow:hidden;
-}
-
-* {
-    box-sizing: border-box;
-    transition: .25s all ease;
 }
 
 #top_logo {
@@ -40,6 +22,8 @@ body, #page-container {
     padding-top: 24px;
     font-size: 16px;
     font-weight: bold;
+    box-sizing: border-box;
+    transition: .25s all ease;
 }
 
 #main-nav ul {
@@ -57,9 +41,10 @@ body, #page-container {
 }
 
 #main-nav li a:hover { /*鼠标移动上去的时候，导航栏样式改变*/
-    color: #008B00;
+    /*color: #008B00;*/
     text-decoration: none;
     transition: .15s all ease;
+    text-shadow: 5px 5px 5px #000000;
 }
 
 .dropdown {
@@ -72,20 +57,20 @@ body, #page-container {
     content: '';
     display: inline-block;
     height: 4px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     position: absolute;
     right: 100%;
-    bottom: -1px;
+    bottom: -3px;
     left: 0;
     border-radius: 50%;
     transition: .35s all ease;
 }
 
 .dropdown .dropbtn:hover:after ,.dropdown:hover .dropbtn:after {
-    background-color: #008B00;
+    background-color: #ffffff;
     height: 2px;
-    right: 40px;
-    bottom: -1px;
+    right: 48px;
+    bottom: -3px;
     border-radius: 0;
     transition: .4s all ease;
 }
@@ -133,11 +118,13 @@ body, #page-container {
     background-color: #ea2329;
 }
 .fnc-slider .m--blend-red .fnc-slide__mask-inner {
-    background-color: #990e13;
+    /*background-color: #990e13;*/
+    background-color: #690c10;
 }
 .fnc-slider .m--navbg-red {
     background-color: #990e13;
 }
+
 .fnc-slider .m--blend-blue .fnc-slide__inner {
     background-color: #59aecb;
 
@@ -149,6 +136,7 @@ body, #page-container {
 .fnc-slider .m--navbg-blue {
     background-color: #2D7791;
 }
+
 .fnc-slide {
     overflow: hidden;
     position: absolute;
@@ -374,15 +362,15 @@ body, #page-container {
 
 .example-slider .fnc-slide-1 .fnc-slide__inner,
 .example-slider .fnc-slide-1 .fnc-slide__mask-inner {
-    background-image: url('../../images/Minions.jpeg');
+    background-image: url('../../images/poster/Avatar.jpeg');
 }
 .example-slider .fnc-slide-2 .fnc-slide__inner,
 .example-slider .fnc-slide-2 .fnc-slide__mask-inner {
-    background-image: url('../../images/WonderWoman.jpeg');
+    background-image: url('../../images/poster/SandDunes.jpg');
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner,
 .example-slider .fnc-slide-3 .fnc-slide__mask-inner {
-    background-image: url('../../images/BeautyAndTheBeast.jpeg');
+    background-image: url('../../images/poster/StarWars.jpg');
 }
 .example-slider .fnc-slide-3 .fnc-slide__inner:before {
     content: "";
@@ -395,7 +383,7 @@ body, #page-container {
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner,
 .example-slider .fnc-slide-4 .fnc-slide__mask-inner {
-    background-image: url('../../images/BabyDriver.jpeg');
+    background-image: url('../../images/poster/joker.jpg');
 }
 .example-slider .fnc-slide-4 .fnc-slide__inner:before {
     content: "";
@@ -405,6 +393,32 @@ body, #page-container {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+}
+
+.example-slider .fnc-slide-5 .fnc-slide__inner,
+.example-slider .fnc-slide-5 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/Minions.jpeg');
+}
+
+.example-slider .fnc-slide-6 .fnc-slide__inner,
+.example-slider .fnc-slide-6 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/Deadpool.jpeg');
+}
+.example-slider .fnc-slide-7 .fnc-slide__inner,
+.example-slider .fnc-slide-7 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/Drstrange.jpg');
+}
+.example-slider .fnc-slide-8 .fnc-slide__inner,
+.example-slider .fnc-slide-8 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/JohnWick.jpeg');
+}
+.example-slider .fnc-slide-9 .fnc-slide__inner,
+.example-slider .fnc-slide-9 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/CaptainAmerica.jpg');
+}
+.example-slider .fnc-slide-10 .fnc-slide__inner,
+.example-slider .fnc-slide-10 .fnc-slide__mask-inner {
+    background-image: url('../../images/poster/Zootopia.jpg');
 }
 .example-slider .fnc-slide__heading,
 .example-slider .fnc-slide__action-btn,
