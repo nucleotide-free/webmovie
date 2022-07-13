@@ -3,10 +3,10 @@
 <mapper namespace="com.software.dao.UserEntityMapper">
 
     <!--1-->
-    <select id="selectUserInfo" parameterType="map" resultType="java.lang.String">
-        select userId
+    <select id="selectUserInfo" parameterType="map" resultType="com.software.dao.Entity.UserEntity">
+        select userId,userName,password
         from user
-        WHERE userName = #{username,jdbcType=VARCHAR} and #{password,jdbcType=VARCHAR}
+        WHERE userName = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
     </select>
 
 

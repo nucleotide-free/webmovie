@@ -5,8 +5,10 @@ var SignUpPassword2 = document.getElementById("SignUpPassword2");
 var SignInName = document.getElementById("SignInName");
 var SignInPassword = document.getElementById("SignInPassword");
 
+
 //注册
-function SignUp(){
+function SignUp() {
+    alert("用户名不能为空！");
     if (!SignUpName.value) {
         alert("用户名不能为空！");
         SignUpName.focus();
@@ -22,17 +24,17 @@ function SignUp(){
         SignUpPassword2.focus();
         return;
     }
-    if(SignUpPassword.value != SignUpPassword2.value){
+    if (SignUpPassword.value != SignUpPassword2.value) {
         alert("两次输入的密码不一致！");
         SignUpPassword.focus();
         return;
     }
 
-    var data = {
-        "username": SignUpName.value,
-        "password": SignUpPassword.value
-    };
-  //  commonAjaxPost(true, "/queryMovieTypeNum", data, loginSuccess)
+    // var data = {
+    //     "username": SignUpName.value,
+    //     "password": SignUpPassword.value
+    // };
+    // commonAjaxPost(true, "/queryMovieTypeNum", data, loginSuccess)
 
 }
 
@@ -49,10 +51,10 @@ function SignIn() {
         return;
     }
 
-    let data = {
-        "username": UserNameText,
-        "password": PasswordTest
-    };
-   // commonAjaxPost(true, "/admin/userLogin", da, loginSuccess)
+    // let data = {
+    //     "username": UserNameText,
+    //     "password": Password
+    // };
+    // commonAjaxPost(true, "/admin/userLogin", da, loginSuccess)
 }
 
