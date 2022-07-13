@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+body, #page-container {
+    font-family: "Microsoft YaHei" ,sans-serif;
+    font-size: 16px;
+    color: #1f1f1f;
+    background: white;
+    margin: 0;
+    padding: 0;
+    over-flow:hidden;
+}
+
+* {
+    box-sizing: border-box;
+    transition: .25s all ease;
+}
+
+#top_logo {
+    position:fixed;
+    top: 0;
+    height: 68px;
+    width: 100%;
+    background: white url(../../images/logo.png) 3% 50% no-repeat;
+    background-size: auto 44px;
+    box-shadow: 0 5px 30px -28px rgba(0, 0, 0, 0.85);
+    font-size: 12px;
+    z-index: 9;
+}
+
+#main-nav {
+    padding-top: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#main-nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#main-nav li a {
+    color: #1a1a1a;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+#main-nav li a:hover { /*鼠标移动上去的时候，导航栏样式改变*/
+    color: #008B00;
+    text-decoration: none;
+    transition: .15s all ease;
+}
+
+.dropdown {
+    float: left;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropbtn:after {
+    content: '';
+    display: inline-block;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    right: 100%;
+    bottom: -1px;
+    left: 0;
+    border-radius: 50%;
+    transition: .35s all ease;
+}
+
+.dropdown .dropbtn:hover:after ,.dropdown:hover .dropbtn:after {
+    background-color: #008B00;
+    height: 2px;
+    right: 40px;
+    bottom: -1px;
+    border-radius: 0;
+    transition: .4s all ease;
+}
+
+#content{
+    margin: 90px 30px 0 30px;
+}
+
+
+.MovieList{
+    margin: auto 14%;
+    padding: 0;
+    height: 160px;
+}
+.movie-number{
+    width: 10px;
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+    background: #0d6aad;
+    border-radius: 3px;
+    box-shadow: 3px 0 5px rgba(51, 51, 51, 0.88);
+    cursor: pointer;
+}
+.movie-number:hover{
+    background: #0a3049;
+}
+
+.movie-left{
+    width: 20%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.movie-right{
+    width: 70%;
+    float: left;
+    height: 100%;
+    padding-left: 28px;
+}
+.movie-title {
+    font-weight: 600;
+    text-align: left;
+    font-size: 20px;
+    margin: 4px 0;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+.movie-detail-line {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.movie-detail-line li {
+    display: inline;
+    font-size: 13px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.movie-rating{
+    display: inline-block;
+    margin: 18px 0 0 0;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+.rating-content-num{
+    float: left;
+    color: #ffd500;
+    line-height: 30px;
+    margin-left: 8px;
+}
+.movie-rating-num{
+    float: left;
+    margin-left: 20px;
+}
+
+.rating-content {
+    float: left;
+    font-size: 18px;
+    color: #ffd500;
+    height: 30px;
+}
+
+.rating-content span {
+    display: inline-block;
+    position: relative;
+}
+
+.rating-content[data-rating="0.5"] span:nth-child(n+1),
+.rating-content[data-rating="1.5"] span:nth-child(n+2),
+.rating-content[data-rating="2.5"] span:nth-child(n+3),
+.rating-content[data-rating="3.5"] span:nth-child(n+4),
+.rating-content[data-rating="4.5"] span:last-child{
+    color: #FFF;
+}
+
+.rating-content[data-rating="0.5"] span:nth-child(n+1):before,
+.rating-content[data-rating="1.5"] span:nth-child(n+2):before,
+.rating-content[data-rating="2.5"] span:nth-child(n+3):before,
+.rating-content[data-rating="3.5"] span:nth-child(n+4):before,
+.rating-content[data-rating="4.5"] span:last-child:before{
+    content: "\2605";
+    display: block;
+    position: absolute;
+    width: 50%;
+    pointer-events: none;
+    overflow: hidden;
+    color: #ffa100;
+}
+
+.rating-content[data-rating="0.5"] span:nth-child(n+2),
+.rating-content[data-rating="1.0"] span:nth-child(n+2),
+.rating-content[data-rating="1.5"] span:nth-child(n+3),
+.rating-content[data-rating="2.0"] span:nth-child(n+3),
+.rating-content[data-rating="2.5"] span:nth-child(n+4),
+.rating-content[data-rating="3.0"] span:nth-child(n+4),
+.rating-content[data-rating="3.5"] span:nth-child(n+5),
+.rating-content[data-rating="4.0"] span:nth-child(n+5){
+    display: none;
+}
