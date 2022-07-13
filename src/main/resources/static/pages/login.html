@@ -2,30 +2,31 @@
 <html>
 <head>
     <title>CampusChain</title>
-    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
-    <meta http-equiv="imagetoolbar" content="no" />
-    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+    <meta http-equiv="imagetoolbar" content="no"/>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <meta name="MSSmartTagsPreventParsing" content="true"/>
     <link rel="stylesheet" href="../pages/css/login.css">
 </head>
 <body>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="" method="post" accept-charset="UTF-8">
+        <form>
             <h1>SIGN UP</h1>
             <input id="SignUpName" type="text" placeholder="用户名" name="SignUpName"/>
             <input id="SignUpPassword" type="password" placeholder="密码" name="SignUpPassword"/>
             <input id="SignUpPassword2" type="password" placeholder="再次输入" name="SignUpPassword2"/>
-            <button type="submit" onclick="SignUp()" style="margin-top: 20px;">Sign Up</button>
+            <button type="button" onclick="SignUp()" style="margin-top: 20px;">Sign Up</button>
         </form>
     </div>
 
     <div class="form-container sign-in-container">
-        <form action="" method="post">
+        <form>
             <h1>SIGN IN</h1>
             <input id="SignInName" type="text" placeholder="text" name="SignInName"/>
             <input id="SignInPassword" type="password" placeholder="Password" name="SignInPassword"/>
             <a href="#">Forgot your password?</a>
-            <button type="submit" onclick="SignIn()">Sign In</button>
+            <button type="button" onclick="SignIn()">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -45,8 +46,13 @@
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
     const container = document.getElementById("container");
-    signUpButton.addEventListener("click", ()=>{container.classList.add("right-panel-active")});
-    signInButton.addEventListener("click", ()=>{container.classList.remove("right-panel-active")});
+    signUpButton.addEventListener("click", () => {
+        container.classList.add("right-panel-active")
+    });
+    signInButton.addEventListener("click", () => {
+        container.classList.remove("right-panel-active")
+    });
 </script>
+<script src="../pages/js/login.js"></script>
 </body>
 </html>
