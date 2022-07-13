@@ -4,12 +4,8 @@ import com.software.service.ProductResultService;
 import com.software.dao.ProjectEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
-/**
- * Created by administrator
- */
 @Service
 public class ProductResultServiceImpl implements ProductResultService {
 
