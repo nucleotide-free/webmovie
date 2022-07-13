@@ -30,24 +30,19 @@ public class UserController {
      * @return
      */
     @RequestMapping(value="/userSignIn",method= RequestMethod.POST, headers = "Accept=application/json")
-    public HttpResponseEntity userSignIn(@RequestBody Map<String,Object> userInfo) {
+    public HttpResponseEntity userSignIn(@RequestBody UserEntity userEntity) {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
-        try {
-            List<UserEntity> hasUser = userService.selectUserInfo(userInfo);
+            List<UserEntity> hasUser = userService.selectUserInfo(userEntity);
             if(CollectionUtils.isEmpty(hasUser) ) {
                 httpResponseEntity.setCode(Constans.EXIST_CODE);
-                httpResponseEntity.setData(null);
-//                httpResponseEntity.setMessage(Constans.LOGIN_USERNAME_PASSWORD_MESSAGE);
+                httpResponseEntity.setData(1);
+                httpResponseEntity.setMessage(Constans.LOGIN_MESSAGE);
+         //       httpResponseEntity.setMessage(Constans.LOGIN_USERNAME_PASSWORD_MESSAGE);
             }else {
                 httpResponseEntity.setCode(Constans.SUCCESS_CODE);
                 httpResponseEntity.setData(hasUser.get(0));
                 httpResponseEntity.setMessage(Constans.LOGIN_MESSAGE);
             }
-
-        } catch (Exception e) {
-            httpResponseEntity.setCode(Constans.EXIST_CODE);
-            httpResponseEntity.setMessage(Constans.EXIST_MESSAGE);
-        }
         return httpResponseEntity;
     }
 

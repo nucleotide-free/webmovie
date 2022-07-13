@@ -24,17 +24,17 @@ function SignUp() {
         SignUpPassword2.focus();
         return;
     }
-    if (SignUpPassword.value != SignUpPassword2.value) {
+    if (SignUpPassword.value !== SignUpPassword2.value) {
         alert("两次输入的密码不一致！");
         SignUpPassword.focus();
         return;
     }
 
-    // var data = {
-    //     "username": SignUpName.value,
-    //     "password": SignUpPassword.value
-    // };
-    // commonAjaxPost(true, "/queryMovieTypeNum", data, loginSuccess)
+    var data = {
+        "username": SignUpName.value,
+        "password": SignUpPassword.value
+    };
+    commonAjaxPost(true, "/userSignIn", data, signUpSuccess)
 
 }
 
@@ -51,10 +51,23 @@ function SignIn() {
         return;
     }
 
-    // let data = {
-    //     "username": UserNameText,
-    //     "password": Password
-    // };
-    // commonAjaxPost(true, "/admin/userLogin", da, loginSuccess)
+    let data = {
+        "username": SignInName.value,
+        "password": SignInPassword.value
+    };
+    commonAjaxPost(true, "/userSignIn", data, loginSuccess)
 }
 
+//登录成功回调
+function loginSuccess(result) {
+    console.log(result)
+    if (result.code == '666') {
+      //  layer.msg(result.message, { icon: 1 });
+        setCookie('isLogin', '1');
+        setCookie('userId', result.data.getId());
+        setCookie('userName', SignInName.value);
+        window.location.href = "homepage.html"
+    } else {
+        alert("八嘎");
+    }
+}

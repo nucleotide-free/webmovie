@@ -11,5 +11,5 @@ public interface UserEntityMapper {
      * @param userEntity
      * @return
      */
-    List<UserEntity> selectUserInfo(Map<String,Object> userEntity);
+    List<UserEntity> selectUserInfo(UserEntity userEntity);
 }
