@@ -42,6 +42,9 @@
     text-align: center;
     margin: 30px auto;
 }
+.logout-box div{
+
+}
 .logout-box button{
     font-family: 'Lato';
     font-weight: 300;
