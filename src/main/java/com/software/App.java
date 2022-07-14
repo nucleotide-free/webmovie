@@ -11,8 +11,8 @@ public class App
     public static void main( String[] args )
     {
 
-       ScalaClassDemo.hi("aaa");
-        System.out.println( "Hello World!" );
+//       ScalaClassDemo.hi("aaa");
+//        System.out.println( "Hello World!" );
 
     }
 }
