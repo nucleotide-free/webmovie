@@ -62,7 +62,6 @@ function SignIn() {
 function loginSuccess(result) {
     console.log(result)
     if (result.code == '666') {
-      //  layer.msg(result.message, { icon: 1 });
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
