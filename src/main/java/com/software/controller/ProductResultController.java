@@ -163,6 +163,4 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
-
-
 }
