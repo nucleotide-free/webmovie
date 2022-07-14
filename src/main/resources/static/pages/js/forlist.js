@@ -1,8 +1,7 @@
 var questIdModal = '';
 var data
 function showCard(title,release_date,genres,runtime,overview){
-    var MovieInfo = JSON.stringify(returndata);
-    console.log(MovieInfo)
+console.log(title)
     $(".overlay").fadeTo(200, 0.5);
     $(".card_title").innerText=title
     $(".card_movie_year").innerText=release_date
@@ -10,13 +9,13 @@ function showCard(title,release_date,genres,runtime,overview){
     $(".card_right__review").innerText=overview
     $(".card").show();
 }
-$(function () {
-    //关闭遮盖层
-    $(".overlay").click(function () {
-        $(".overlay").fadeOut(200);
-        $(".card").hide();
-    });
-});
+// $(function () {
+//     //关闭遮盖层
+//     $(".overlay").click(function () {
+//         $(".overlay").fadeOut(200);
+//         $(".card").hide();
+//     });
+// });
 
 $(function() {
     // isLoginFun();
@@ -55,7 +54,7 @@ function queryMoviesListSuccess(result) {
                     movieTitle = movieTitle.substring(0, 26) + "...";
                 }
                 if(i<=0) {
-                    var sb = '     <div class="overlay" ></div> <div class="card">';
+                    var sb = '     <div class="overlay" onclick="hideCard()" ></div> <div class="card">';
                     sb += '        <div class="card_left">';
                     sb += '            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"/>';
                     sb += '        </div>';
@@ -136,7 +135,7 @@ function queryMoviesListSuccess(result) {
                     $("#panel-23802").append(sb);
                 }
                 var ss='    <div id="content">';
-                ss+='        <div class="MovieList" onclick="showCard('+MovieInfo.title+','+MovieInfo.release_date+','+MovieInfo.genres+','+MovieInfo.runtime+','+MovieInfo.overview+')">';
+                ss+='        <div class="MovieList" onclick=\'showCard('+'"'+ MovieInfo.title + '"'+')\'>';
                 ss+='            <div class="movie-number"></div>';
                 ss+='            <div class="movie-left">';
                 ss+='                <img src="../images/poster/killbill.jpeg" height="200">';
