@@ -162,7 +162,7 @@ body, #page-container {
 .rating-content {
     float: left;
     font-size: 18px;
-    color: #ffd500;
+    color: #ffd600;
     height: 30px;
 }
 
@@ -175,7 +175,12 @@ body, #page-container {
 .rating-content[data-rating="1.5"] span:nth-child(n+2),
 .rating-content[data-rating="2.5"] span:nth-child(n+3),
 .rating-content[data-rating="3.5"] span:nth-child(n+4),
-.rating-content[data-rating="4.5"] span:last-child{
+.rating-content[data-rating="4.5"] span:nth-child(n+5),
+.rating-content[data-rating="5.5"] span:nth-child(n+6),
+.rating-content[data-rating="6.5"] span:nth-child(n+7),
+.rating-content[data-rating="7.5"] span:nth-child(n+8),
+.rating-content[data-rating="8.5"] span:nth-child(n+9),
+.rating-content[data-rating="9.5"] span:last-child{
     color: #FFF;
 }
 
@@ -183,45 +188,42 @@ body, #page-container {
 .rating-content[data-rating="1.5"] span:nth-child(n+2):before,
 .rating-content[data-rating="2.5"] span:nth-child(n+3):before,
 .rating-content[data-rating="3.5"] span:nth-child(n+4):before,
-.rating-content[data-rating="4.5"] span:last-child:before{
+.rating-content[data-rating="4.5"] span:nth-child(n+5):before,
+.rating-content[data-rating="5.5"] span:nth-child(n+6):before,
+.rating-content[data-rating="6.5"] span:nth-child(n+7):before,
+.rating-content[data-rating="7.5"] span:nth-child(n+8):before,
+.rating-content[data-rating="8.5"] span:nth-child(n+9):before,
+.rating-content[data-rating="9.5"] span:last-child:before{
     content: "\2605";
     display: block;
     position: absolute;
     width: 50%;
     pointer-events: none;
     overflow: hidden;
-    color: #ffa100;
+    color: #ffd700;
 }
 
 .rating-content[data-rating="0.5"] span:nth-child(n+2),
-.rating-content[data-rating="1"] span:nth-child(n+2),
+.rating-content[data-rating="1.0"] span:nth-child(n+2),
 .rating-content[data-rating="1.5"] span:nth-child(n+3),
-.rating-content[data-rating="2"] span:nth-child(n+3),
+.rating-content[data-rating="2.0"] span:nth-child(n+3),
 .rating-content[data-rating="2.5"] span:nth-child(n+4),
-.rating-content[data-rating="3"] span:nth-child(n+4),
+.rating-content[data-rating="3.0"] span:nth-child(n+4),
 .rating-content[data-rating="3.5"] span:nth-child(n+5),
-.rating-content[data-rating="4"] span:last-child:after{
-    content: "\2605";
-    display: block;
-    position: absolute;
-    width: 50%;
-    pointer-events: none;
-    overflow: hidden;
-    color: #ad331d;
-}
+.rating-content[data-rating="4.0"] span:nth-child(n+5),
 .rating-content[data-rating="4.5"] span:nth-child(n+6),
-.rating-content[data-rating="5"] span:nth-child(n+6)
+.rating-content[data-rating="5.0"] span:nth-child(n+6),
 .rating-content[data-rating="5.5"] span:nth-child(n+7),
-.rating-content[data-rating="6"] span:nth-child(n+7)
+.rating-content[data-rating="6.0"] span:nth-child(n+7),
 .rating-content[data-rating="6.5"] span:nth-child(n+8),
-.rating-content[data-rating="7"] span:nth-child(n+8)
+.rating-content[data-rating="7.0"] span:nth-child(n+8),
 .rating-content[data-rating="7.5"] span:nth-child(n+9),
-.rating-content[data-rating="8"] span:nth-child(n+9)
+.rating-content[data-rating="8.0"] span:nth-child(n+9),
 .rating-content[data-rating="8.5"] span:nth-child(n+10),
-.rating-content[data-rating="9"]span:last-child:after
-{
+.rating-content[data-rating="9.0"] span:nth-child(n+10){
     display: none;
 }
+
 /*页面导航栏*/
 .pagefor{
     position:relative;

@@ -1,5 +1,16 @@
 var questIdModal = '';
 let data;
+var colorful = ["#000000",
+    "rgb(165,109,166)",
+    "rgb(121,133,168)",
+    "#5F6E65",
+    "#54464B",
+    "#D0B4A9",
+    "#809489",
+    "#A9888D",
+    "#9F9C96",
+    "#878FB1",
+]
 
 $(function () {
     LoginCheck();
@@ -136,7 +147,7 @@ function queryMoviesListSuccess(result) {
                 }
                 var ss = '    <div id="content">';
                 ss += '        <div class="MovieList" onclick=\'showCard(' + '"' + i + '"' + ')\'>';
-                ss += '            <div class="movie-number"></div>';
+                ss += '            <div class="movie-number" style="background-color:'+ colorful[i] +'"></div>';
                 ss += '            <div class="movie-left">';
                 ss += '                <img src="https://image.tmdb.org/t/p/original/'+MovieInfo.poster_path+'" height="200">';
                 ss += '            </div>';

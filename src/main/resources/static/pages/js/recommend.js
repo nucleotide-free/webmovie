@@ -1,5 +1,16 @@
 var questIdModal = '';
 var data;
+var colorful = ["#000000",
+    "#B47C74",
+    "#354B6A",
+    "#5F6E65",
+    "#54464B",
+    "#D0B4A9",
+    "#809489",
+    "#A9888D",
+    "#9F9C96",
+    "#878FB1",
+]
 function showCard(title,release_date,genres,runtime,overview,userid){
     var MovieInfo = JSON.stringify(returndata);
     console.log(MovieInfo)
@@ -130,7 +141,7 @@ function queryMoviesListSuccess(result) {
                     $("#panel-23802").append(sb);
                 }
                 var ss='      <div class="MovieList" onclick="showCard('+MovieInfo.title+','+MovieInfo.release_date+','+MovieInfo.genres+','+MovieInfo.runtime+','+MovieInfo.overview+')">';
-                ss+='            <div class="movie-number"></div>';
+                ss+='            <div class="movie-number" style="background-color:'+ colorful[i] +'"></div>';
                 ss+='            <div class="movie-left">';
                 ss+= '                <img src="https://image.tmdb.org/t/p/original/'+MovieInfo.poster_path+'" height="200">';
                 ss+='            </div>';
@@ -157,16 +168,11 @@ function queryMoviesListSuccess(result) {
                 ss+='                </div>';
                 ss+='            </div>';
 
-                // }
                 $("#panel-23802").append(ss);
                 $("#results-report").html("电影推荐 Movie Recommend");
             }
-            //for循环结束
-
-
         } else {
-            alert("ppppp")
-
+            $("#results-report").html("暂无推荐，期待您的评分！");
         }
 
     } else if (result.code == "333") {
