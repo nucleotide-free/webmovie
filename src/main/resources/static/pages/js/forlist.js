@@ -1,36 +1,27 @@
 var questIdModal = '';
-var data
-function showCard(title,release_date,genres,runtime,overview){
-console.log(title)
+let data;
+
+function showCard(id) {
+    $(".card_title").html(data[id].title)
+    $(".card_movie_year").html(data[id].release_date)
+    $(".card_movie_runtime").html(data[id].runtime+"min")
+    $(".card_movie_tag").html(data[id].genres)
+    $(".card_right__review p").html(data[id].overview)
+    $(".card_right__review a").attr("href","https://www.imdb.com/title/"+data[id].imdb_id)
+    $(".card_left img").attr("src","https://image.tmdb.org/t/p/original/"+data[id].poster_path)
     $(".overlay").fadeTo(200, 0.5);
-    $(".card_title").innerText=title
-    $(".card_movie_year").innerText=release_date
-    $(".card_movie_tag").innerText=genres
-    $(".card_right__review").innerText=overview
     $(".card").show();
 }
-// $(function () {
-//     //关闭遮盖层
-//     $(".overlay").click(function () {
-//         $(".overlay").fadeOut(200);
-//         $(".card").hide();
-//     });
-// });
 
-$(function() {
-    // isLoginFun();
-    // var userId= getCookie('userId');
-    // header();
-    // $("#ctl01_lblUserName").html(userId);
+$(function () {
     queryMoviesList();
 });
+
 // 查看项目及其包含的问卷列表
 function queryMoviesList() {
 
     var url = '/queryMoviesList';
-    var data = {
-
-    };
+    var data = {};
     commonAjaxPost(true, url, data, queryMoviesListSuccess);
 }
 
@@ -39,7 +30,6 @@ function queryMoviesListSuccess(result) {
     if (result.code == "666") {
         data = result.data;
         console.log(data)
-        console.log("11")
         $("#panel-23802").empty();
 
         //遍历多个项目
@@ -53,13 +43,13 @@ function queryMoviesListSuccess(result) {
                 if (movieTitle.length >= 25) {
                     movieTitle = movieTitle.substring(0, 26) + "...";
                 }
-                if(i<=0) {
+                if (i <= 0) {
                     var sb = '     <div class="overlay" onclick="hideCard()" ></div> <div class="card">';
                     sb += '        <div class="card_left">';
                     sb += '            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"/>';
                     sb += '        </div>';
                     sb += '        <div class="card_right">';
-                    sb += '            <h1 class="card_title" >' + MovieInfo.title + '</h1>';
+                    sb += '            <h1 class="card_title" >标题</h1>';
                     sb += '            <div class="card_right__details">';
                     sb += '                <ul>';
                     sb += '                    <li class="card_movie_year">' + MovieInfo.release_date + '</li>';
@@ -134,35 +124,35 @@ function queryMoviesListSuccess(result) {
                     sb += '    </div>';
                     $("#panel-23802").append(sb);
                 }
-                var ss='    <div id="content">';
-                ss+='        <div class="MovieList" onclick=\'showCard('+'"'+ MovieInfo.title + '"'+')\'>';
-                ss+='            <div class="movie-number"></div>';
-                ss+='            <div class="movie-left">';
-                ss+='                <img src="../images/poster/killbill.jpeg" height="200">';
-                ss+='            </div>';
-                ss+='            <div class="movie-right">';
-                ss+='                <h3 class="movie-title">'+MovieInfo.title+'</h3>';
-                ss+='                <ul class="movie-detail-line">';
-                ss+='                    <li class="movie_director">语言：'+MovieInfo.original_language+'</li>';
-                ss+='                    <li class="movie_runtime">'+MovieInfo.runtime+'min</li>';
-                ss+='                </ul>';
-                ss+='                <ul class="movie-detail-line">';
-                ss+='                    <li class="movie_year">'+MovieInfo.release_date+'</li>';
-                ss+='                    <li class="movie_tag">'+MovieInfo.genres+'</li>';
-                ss+='                </ul>';
-                ss+='                <div class="movie-rating">';
-                ss+='                    <div class="rating-content" data-rating="'+MovieInfo.vote_average+'">';
-                ss+='                        <span>★</span>';
-                ss+='                        <span>★</span>';
-                ss+='                        <span>★</span>';
-                ss+='                        <span>★</span>';
-                ss+='                        <span>★</span>';
-                ss+='                    </div>';
-                ss+='                    <span class="rating-content-num">'+MovieInfo.vote_average+'</span>';
-                ss+='                    <div class="movie-rating-num">'+MovieInfo.vote_count+'人已评价</div>';
-                ss+='                </div>';
-                ss+='            </div>';
-                ss+='        </div>';
+                var ss = '    <div id="content">';
+                ss += '        <div class="MovieList" onclick=\'showCard(' + '"' + i + '"' + ')\'>';
+                ss += '            <div class="movie-number"></div>';
+                ss += '            <div class="movie-left">';
+                ss += '                <img src="../images/poster/killbill.jpeg" height="200">';
+                ss += '            </div>';
+                ss += '            <div class="movie-right">';
+                ss += '                <h3 class="movie-title">' + MovieInfo.title + '</h3>';
+                ss += '                <ul class="movie-detail-line">';
+                ss += '                    <li class="movie_director">语言：' + MovieInfo.original_language + '</li>';
+                ss += '                    <li class="movie_runtime">' + MovieInfo.runtime + 'min</li>';
+                ss += '                </ul>';
+                ss += '                <ul class="movie-detail-line">';
+                ss += '                    <li class="movie_year">' + MovieInfo.release_date + '</li>';
+                ss += '                    <li class="movie_tag">' + MovieInfo.genres + '</li>';
+                ss += '                </ul>';
+                ss += '                <div class="movie-rating">';
+                ss += '                    <div class="rating-content" data-rating="' + MovieInfo.vote_average + '">';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                    </div>';
+                ss += '                    <span class="rating-content-num">' + MovieInfo.vote_average + '</span>';
+                ss += '                    <div class="movie-rating-num">' + MovieInfo.vote_count + '人已评价</div>';
+                ss += '                </div>';
+                ss += '            </div>';
+                ss += '        </div>';
 
                 // }
                 $("#panel-23802").append(ss);
@@ -175,24 +165,25 @@ function queryMoviesListSuccess(result) {
         }
 
     } else if (result.code == "333") {
-        layer.msg(result.message, { icon: 2 });
-        setTimeout(function() {
+        layer.msg(result.message, {icon: 2});
+        setTimeout(function () {
             window.location.href = 'login.html';
         }, 1000)
     } else {
-        layer.msg(result.message, { icon: 2 })
+        layer.msg(result.message, {icon: 2})
     }
 
 }
+
 //遮罩层取消+评价
-function hideCard(){
+function hideCard() {
     $(".overlay").fadeOut(200);
     $(".card").hide();
     // var userId = parseInt(getCookie("userId"))
     // var movieId = parseInt(getCookie("movieId"))
     //获取评分
     var rating = $('input:radio[name="rating"]:checked').val();
-    if (rating){
+    if (rating) {
         let data = {
             "userId": 111111,//userId,
             "movieId": 1188877,//movieId,
@@ -200,11 +191,11 @@ function hideCard(){
             "timestamp": new Date().valueOf().toString()
         };
         console.log(data)
-        commonAjaxPost(true, "/insertRatingInfo", data,ratingSuccess)
+        commonAjaxPost(true, "/insertRatingInfo", data, ratingSuccess)
     }
 }
 
 //评价成功函数回调
-function ratingSuccess(){
+function ratingSuccess() {
 
 }

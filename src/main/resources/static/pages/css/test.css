@@ -123,6 +123,15 @@ body {
     letter-spacing: 1px;
     margin: 10px 0 10px 0;
     line-height: 20px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; /*设置p元素最大4行，父元素需填写宽度才明显*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .card .card_right__review a {
     text-decoration: none;
