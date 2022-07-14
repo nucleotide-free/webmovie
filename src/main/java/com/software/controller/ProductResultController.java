@@ -165,6 +165,16 @@ public class ProductResultController {
         httpResponseEntity.setData(result);
         return httpResponseEntity;
     }
+
+    @RequestMapping(value = "/queryRecommendList")
+    public HttpResponseEntity queryRecommendList(@RequestBody Map<String,Object> request2) {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        List<Object> result = projectService.queryRecommendList((Integer) request2.get("userid"));
+        httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+        httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+
     /**
      * 新建评价信息
      */

@@ -87,6 +87,15 @@ public class ProductResultServiceImpl implements ProductResultService {
         return resultList;
     }
 
+    public List<Object> queryRecommendList(int userid) {//获取电影列表
+        List<Object> resultList = new ArrayList<Object>();
+        List<Map<String,Object>> proResult = projectEntityMapper.queryRecommendList(userid);
+        for(Map<String,Object> proObj : proResult) {
+            resultList.add(proObj);
+        }
+        return resultList;
+    }
+
     @Override
     public int insertRatingInfo(Map<String, Object> map) {//创建评价信息
         int result = projectEntityMapper.insertRatingInfo(map);

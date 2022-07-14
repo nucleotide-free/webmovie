@@ -28,6 +28,6 @@ public interface ProjectEntityMapper {
 
     List<Map<String, Object>> queryKeywords();//9
     List<Map<String, Object>> queryMoviesList(int off);
-
+    List<Map<String, Object>> queryRecommendList(int userid);
     int insertRatingInfo(Map<String, Object> map);//创建评价信息
 }
