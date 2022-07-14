@@ -166,7 +166,6 @@ function queryMoviesListSuccess(result) {
 
         } else {
             alert("ppppp")
-
         }
 
     } else if (result.code == "333") {

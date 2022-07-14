@@ -151,7 +151,12 @@ function queryMoviesListSuccess(result) {
                 ss += '                    <li class="movie_tag">' + MovieInfo.genres + '</li>';
                 ss += '                </ul>';
                 ss += '                <div class="movie-rating">';
-                ss += '                    <div class="rating-content" data-rating="' + MovieInfo.vote_average + '">';
+                ss += '                    <div class="rating-content" data-rating="' + parseInt(MovieInfo.vote_average) + '">';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
+                ss += '                        <span>★</span>';
                 ss += '                        <span>★</span>';
                 ss += '                        <span>★</span>';
                 ss += '                        <span>★</span>';
