@@ -4,8 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>电影推荐</title>
     <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../js/echarts.min.js"></script>
-    <script type="text/javascript" src="../js/echarts-wordcloud.min.js"></script>
     <link rel="stylesheet" href="../pages/css/forlist.css">
     <link rel="stylesheet" href="../pages/css/test.css">
 </head>
@@ -14,13 +12,16 @@
     <div id="top_logo">
         <div id="main-nav">
             <ul>
-                <li class="dropdown"><a class="dropbtn" href="../pages/showTop.html">首页 HOME</a></li>
-                <li class="dropdown"><a class="dropbtn" href="../pages/homepage.html">电影现状分析</a></li>
-                <li class="dropdown"><a class="dropbtn" href="../pages/forlist.html">年度榜单</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/homepage.html">首页 HOME</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/test.html">选电影</a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">排行榜</a></li>
+                <li class="dropdown"><a class="dropbtn" href="homepage.html">影视分类</a></li>
+                <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;">年度榜单</a></li>
             </ul>
         </div>
     </div>
-    遮罩
+
+    <!--遮罩-->
     <div class="overlay"></div>
     <!--弹出层-->
     <div class="card">
@@ -28,7 +29,7 @@
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"/>
         </div>
         <div class="card_right">
-            <h1 class="card_title">KILL BILL: VOL. 1！！</h1>
+            <h1 class="card_title">KILL BILL: VOL. 1</h1>
             <div class="card_right__details">
                 <ul>
                     <li class="card_movie_year">2003</li>
@@ -106,49 +107,57 @@
             </div>
         </div>
     </div>
-<!--    <div id="content">-->
-<!--        <h1>电影列表</h1>-->
-<!--        <div class="MovieList" onclick="showCard()">-->
-<!--            <div class="movie-number"></div>-->
-<!--            <div class="movie-left">-->
-<!--                <img src="../images/poster/killbill.jpeg" height="200">-->
-<!--            </div>-->
-<!--            <div class="movie-right">-->
-<!--                <h3 class="movie-title">KILL BILL</h3>-->
-<!--                <ul class="movie-detail-line">-->
-<!--                    <li class="movie_director">语言：英语</li>-->
-<!--                    <li class="movie_runtime">111 min</li>-->
-<!--                </ul>-->
-<!--                <ul class="movie-detail-line">-->
-<!--                    <li class="movie_year">2003</li>-->
-<!--                    <li class="movie_tag">动作</li>-->
-<!--                </ul>-->
-<!--                <div class="movie-rating">-->
-<!--                    <div class="rating-content" data-rating="3.5">-->
-<!--                        <span>★</span>-->
-<!--                        <span>★</span>-->
-<!--                        <span>★</span>-->
-<!--                        <span>★</span>-->
-<!--                        <span>★</span>-->
 
-
-<!--                    </div>-->
-<!--                    <span class="rating-content-num">9.6</span>-->
-<!--                    <div class="movie-rating-num">2651472人已评价</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <div  id="panel-23802">
+    <div id="content">
+        <h1>电影列表</h1>
+        <div class="MovieList" onclick="showCard()">
+            <div class="movie-number"></div>
+            <div class="movie-left">
+                <img src="../images/poster/Avatar.jpeg" height="200">
+            </div>
+            <div class="movie-right">
+                <h3 class="movie-title">肖申克的救赎</h3>
+                <ul class="movie-detail-line">
+                    <li class="movie_director">导演xxx</li>
+                    <li class="movie_runtime">111 min</li>
+                </ul>
+                <ul class="movie-detail-line">
+                    <li class="movie_year">1994</li>
+                    <li class="movie_tag">犯罪 / 剧情</li>
+                </ul>
+                <div class="movie-rating">
+                    <div class="rating-content" data-rating="3.5">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                    </div>
+                    <span class="rating-content-num">9.6</span>
+                    <div class="movie-rating-num">2651472人已评价</div>
+                </div>
+            </div>
         </div>
-        <div class="pageSelect">
 
-        </div>
+        <div class="pageSelect"></div>
     </div>
+
+
 </div>
-<script src="../pages/js/forlist.js"></script>
-<script src="../common/common.js"></script>
-<script src="../plugins/cookie/jquery.cookie.js"></script>
-<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
 
 </body>
+<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script type="text/javascript">
+    function showCard(){
+        $(".overlay").fadeTo(200, 0.5);
+        $(".card").show();
+    }
+    $(function () {
+        //关闭遮盖层
+        $(".overlay").click(function () {
+            $(".overlay").fadeOut(200);
+            $(".card").hide();
+        });
+    });
+</script>
 </html>
