@@ -54,7 +54,7 @@ function queryMoviesListSuccess(result) {
                 if (movieTitle.length >= 25) {
                     movieTitle = movieTitle.substring(0, 26) + "...";
                 }
-                if(i==0) {
+                if(i<=0) {
                     var sb = '     <div class="overlay" ></div> <div class="card">';
                     sb += '        <div class="card_left">';
                     sb += '            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"/>';
