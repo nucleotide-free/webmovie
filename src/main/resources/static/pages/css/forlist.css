@@ -199,3 +199,42 @@ body, #page-container {
 .rating-content[data-rating="4.0"] span:nth-child(n+5){
     display: none;
 }
+/*页面导航栏*/
+.pagefor{
+    position:relative;
+    z-index:99;
+    text-align:center;
+    height:50px;
+    font-family: sans-serif;
+    font-size:13px;
+    margin-top:18px;
+}
+.pagefor ul,.pagefor ul li{
+    list-style:none;
+    display:inline;
+}
+.pagefor ul li{
+    position: relative;
+    display: inline-block;
+    margin:0 5px;
+}
+.pagefor ul li a {
+    border: solid 1.5px rgb(240, 240, 240, 0.8);
+    border-image :-webkit-linear-gradient(45deg, black, white) 10 10;
+    border-image :-o-linear-gradient(45deg, black, white) 10 10;
+    border-image : linear-gradient(45deg, black, gray) 10 10;
+    border-radius: 0.2rem;
+    color: #6c6c6c;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.8rem;
+    transition: 0s all ease;
+}
+.pagefor ul .p-active a,.pagefor li:hover a{
+    color:orange;
+    border: solid 1.5px rgb(240, 240, 240, 0.8);
+    border-image :-webkit-linear-gradient(45deg, black, white) 10 10;
+    border-image :-o-linear-gradient(45deg, black, white) 10 10;
+    border-image : linear-gradient(45deg,#F80, #2ED) 10 10;
+}

@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.Integer.parseInt;
+
 @RestController
 public class ProductResultController {
 
@@ -156,9 +158,9 @@ public class ProductResultController {
     }
 
     @RequestMapping(value = "/queryMoviesList")
-    public HttpResponseEntity queryMoviesList() {
+    public HttpResponseEntity queryMoviesList(@RequestBody  String off) {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
-        List<Object> result = projectService.queryMoviesList();
+        List<Object> result = projectService.queryMoviesList( parseInt(off));
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;

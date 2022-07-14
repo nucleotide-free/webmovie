@@ -27,7 +27,7 @@ public interface ProjectEntityMapper {
     List<Map<String, Object>> queryMovieTimeVote();//8
 
     List<Map<String, Object>> queryKeywords();//9
-    List<Map<String, Object>> queryMoviesList();
+    List<Map<String, Object>> queryMoviesList(int off);
 
     int insertRatingInfo(Map<String, Object> map);//创建评价信息
 }

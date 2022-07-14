@@ -73,7 +73,10 @@
     <select id="queryMoviesList" resultType="map">
         select *
         from movies
-        limit 19, 10
+
+        <if test="off != null">
+            limit ${off}, 10
+        </if>
 
     </select>
     <!--填写评价信息-->

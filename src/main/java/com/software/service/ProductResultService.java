@@ -18,6 +18,6 @@ public interface ProductResultService {
     public List<Map<String, Object>> queryMovieTimeVote();//8
     public List<Map<String, Object>> queryKeywords();//9
 
-    public List<Object> queryMoviesList();//查找全部电影
+    public List<Object> queryMoviesList(int off);//查找全部电影
     public int insertRatingInfo(Map<String, Object> map);//新建评价信息
 }

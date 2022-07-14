@@ -13,15 +13,18 @@ function showCard(id) {
     $(".card").show();
 }
 
+
 $(function () {
-    queryMoviesList();
+    queryMoviesList(1);
 });
 
 // 查看项目及其包含的问卷列表
-function queryMoviesList() {
-
+function queryMoviesList(off) {
+    off=off*10
     var url = '/queryMoviesList';
-    var data = {};
+    var data = {
+        "off": off.toString(),
+    };
     commonAjaxPost(true, url, data, queryMoviesListSuccess);
 }
 
@@ -128,7 +131,7 @@ function queryMoviesListSuccess(result) {
                 ss += '        <div class="MovieList" onclick=\'showCard(' + '"' + i + '"' + ')\'>';
                 ss += '            <div class="movie-number"></div>';
                 ss += '            <div class="movie-left">';
-                ss += '                <img src="../images/poster/killbill.jpeg" height="200">';
+                ss += '                <img src="https://image.tmdb.org/t/p/original/'+MovieInfo.poster_path+'" height="200">';
                 ss += '            </div>';
                 ss += '            <div class="movie-right">';
                 ss += '                <h3 class="movie-title">' + MovieInfo.title + '</h3>';

@@ -78,9 +78,9 @@ public class ProductResultServiceImpl implements ProductResultService {
     }
 
     @Override
-    public List<Object> queryMoviesList() {//获取电影列表
+    public List<Object> queryMoviesList(int off) {//获取电影列表
         List<Object> resultList = new ArrayList<Object>();
-        List<Map<String,Object>> proResult = projectEntityMapper.queryMoviesList();
+        List<Map<String,Object>> proResult = projectEntityMapper.queryMoviesList(off);
         for(Map<String,Object> proObj : proResult) {
             resultList.add(proObj);
         }
