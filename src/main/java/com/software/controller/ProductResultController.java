@@ -3,6 +3,7 @@ package com.software.controller;
 import com.software.beans.HttpResponseEntity;
 import com.software.common.Constans;
 import com.software.beans.ProdcutResultEntity;
+import com.software.dao.Entity.UserEntity;
 import com.software.service.ProductResultService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -161,6 +162,23 @@ public class ProductResultController {
         List<Object> result = projectService.queryMoviesList();
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
+        return httpResponseEntity;
+    }
+
+    /**
+     * 新建评价信息
+     */
+    @RequestMapping(value="/insertRatingInfo",method= RequestMethod.POST, headers = "Accept=application/json")
+    public HttpResponseEntity insertRatingInfo(@RequestBody Map<String, Object> map) {
+        HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
+        int result = projectService.insertRatingInfo(map);
+        if(result > 0) {
+            httpResponseEntity.setCode(Constans.SUCCESS_CODE);
+            httpResponseEntity.setMessage(Constans.UPDATE_MESSAGE);
+        }else {
+            httpResponseEntity.setCode(Constans.EXIST_CODE);
+            httpResponseEntity.setMessage(Constans.EXIST_MESSAGE);
+        }
         return httpResponseEntity;
     }
 }

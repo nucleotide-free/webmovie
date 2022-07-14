@@ -1,5 +1,6 @@
 package com.software.dao;
 
+import com.software.dao.Entity.UserEntity;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Map;
@@ -27,4 +28,6 @@ public interface ProjectEntityMapper {
 
     List<Map<String, Object>> queryKeywords();//9
     List<Map<String, Object>> queryMoviesList();
+
+    int insertRatingInfo(Map<String, Object> map);//创建评价信息
 }

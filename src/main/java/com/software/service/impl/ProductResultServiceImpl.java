@@ -86,4 +86,10 @@ public class ProductResultServiceImpl implements ProductResultService {
         }
         return resultList;
     }
+
+    @Override
+    public int insertRatingInfo(Map<String, Object> map) {//创建评价信息
+        int result = projectEntityMapper.insertRatingInfo(map);
+        return result;
+    }
 }
