@@ -54,6 +54,7 @@ public class UserController {
             httpResponseEntity.setData(hasUser);
             httpResponseEntity.setMessage(Constans.LOGIN_MESSAGE);
             //       httpResponseEntity.setMessage(Constans.LOGIN_USERNAME_PASSWORD_MESSAGE);
+
         }else {
             httpResponseEntity.setCode(Constans.EXIST_CODE);
             httpResponseEntity.setData(hasUser);

@@ -73,39 +73,7 @@
     <select id="queryMoviesList" resultType="map">
         select *
         from movies
-        limit 19 , 10
-    </select>
+        limit 19, 10
 
-    <!--填写评价信息-->
-    <insert id="insertRatingInfo" parameterType="map">
-        insert into ratings
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="userId != null">
-                userId,
-            </if>
-            <if test="movieId != null">
-                movieId,
-            </if>
-            <if test="rating != null">
-                rating,
-            </if>
-            <if test="timestamp != null">
-                timestamp,
-            </if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="userId != null">
-                #{userId,jdbcType=INTEGER},
-            </if>
-            <if test="movieId != null">
-                #{movieId,jdbcType=INTEGER},
-            </if>
-            <if test="rating != null">
-                #{rating,jdbcType=DOUBLE},
-            </if>
-            <if test="timestamp != null">
-                #{timestamp,jdbcType=VARCHAR},
-            </if>
-        </trim>
-    </insert>
+    </select>
 </mapper>
