@@ -20,7 +20,7 @@ body, #page-container {
     top: 0;
     height: 68px;
     width: 100%;
-    background: white url(../../images/logo.png) 3% 50% no-repeat;
+    background: white url(../../images/logo-b.png) 3% 50% no-repeat;
     background-size: auto 44px;
     box-shadow: 0 5px 30px -28px rgba(0, 0, 0, 0.85);
     font-size: 12px;
@@ -91,7 +91,7 @@ body, #page-container {
 
 
 .MovieList{
-    margin: auto 14%;
+    margin: 50px 14%;
     padding: 0;
     height: 160px;
 }
