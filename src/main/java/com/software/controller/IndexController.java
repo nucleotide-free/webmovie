@@ -12,6 +12,6 @@ public class IndexController {
     @RequestMapping(value = "/")
     public String gotoIndex(){
 
-        return "pages/showTop.html";
+        return "pages/homepage.html";
     }
 }
