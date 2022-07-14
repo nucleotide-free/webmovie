@@ -16,18 +16,26 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserEntityMapper userEntityMapper;
-    @Override
+
+
     /**
-     * 查询用户信息
+     * 登录--查询用户信息
      *
-     * @param
+     * @param userEntity
      * @return
      */
+    @Override
     public List<UserEntity> selectUserInfo(UserEntity userEntity) {
         List<UserEntity> user = userEntityMapper.selectUserInfo(userEntity);
         return user;
     }
 
+    /**
+     * 注册--创建用户信息
+     *
+     * @param userEntity
+     * @return
+     */
     @Override
     public int insertUserInfo(UserEntity userEntity) {
         int user = userEntityMapper.insertUserInfo(userEntity);

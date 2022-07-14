@@ -3,8 +3,6 @@ package com.software.controller;
 import com.software.beans.HttpResponseEntity;
 import com.software.common.Constans;
 import com.software.dao.Entity.UserEntity;
-import com.software.dao.UserEntityMapper;
-import com.software.service.ProductResultService;
 import com.software.service.UserService;
 import org.apache.shiro.util.CollectionUtils;
 import org.slf4j.Logger;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 @RestController
 public class UserController {
 
@@ -24,10 +21,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
     /**
-     * 用户登录
-     * @param
-     * @return
+     * 1--用户登录
      */
     @RequestMapping(value="/userSignIn",method= RequestMethod.POST, headers = "Accept=application/json")
     public HttpResponseEntity userSignIn(@RequestBody UserEntity userEntity) {
@@ -46,7 +42,9 @@ public class UserController {
         return httpResponseEntity;
     }
 
-
+    /**
+     * 2--用户注册
+     */
     @RequestMapping(value="/userSignUp",method= RequestMethod.POST, headers = "Accept=application/json")
     public HttpResponseEntity userSignUp(@RequestBody UserEntity userEntity) {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
@@ -63,8 +61,6 @@ public class UserController {
         }
         return httpResponseEntity;
     }
-
-
 }
 
 
