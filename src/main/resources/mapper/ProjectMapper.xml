@@ -71,7 +71,9 @@
     </select>
     <!--请求电影列表-->
     <select id="queryMoviesList" resultType="map">
-        select id, overview,title,title,release_date,runtime,vote_average,poster_path
+        select *
         from movies
+        limit 19, 10
+
     </select>
 </mapper>
