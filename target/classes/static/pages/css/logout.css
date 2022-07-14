@@ -58,7 +58,7 @@
     position: absolute;
     bottom: 20px;
     text-align: center;
-    margin: auto;
+    margin: auto 0;
     color: #363636;
     background: none;
     border: none;

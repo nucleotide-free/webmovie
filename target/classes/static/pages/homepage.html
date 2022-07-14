@@ -5,6 +5,7 @@
     <title>电影推荐</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link rel="stylesheet" href="../pages/css/homePage.css">
+    <link rel="stylesheet" href="../pages/css/logout.css">
 </head>
 <body>
 <div id="page-container">
@@ -14,8 +15,18 @@
                 <li class="dropdown"><a class="dropbtn" href="../pages/homePage.html">首页</a></li>
                 <li class="dropdown"><a class="dropbtn" href="../pages/analyse.html">电影现状分析</a></li>
                 <li class="dropdown"><a class="dropbtn" href="../pages/movieList.html">电影榜单</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/recommend.html">为您推荐</a></li>
             </ul>
-            <div class="userName">你好！</div>
+            <div class="userName" title="退出登录" onclick="LogoutShow()">你好！</div>
+        </div>
+    </div>
+
+    <div class="logout-overlay" onclick="LogoutHide()"></div>
+    <div class="logout-box">
+        <h5>确定要退出登录吗？</h5>
+        <div>
+            <button class="logout-yes" onclick="Logout()">Yes</button>
+            <button class="logout-no" onclick="LogoutHide()" style="padding-left: 300px">No</button>
         </div>
     </div>
 

@@ -64,9 +64,8 @@ function loginSuccess(result) {
     if (result.code == '666') {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
-        console.log(result.data.id)
         setCookie('userName', SignInName.value);
-       window.location.href = "../pages/analyse.html"
+       window.location.href = "../pages/homePage.html"
     } else {
         alert("八嘎");
     }
@@ -79,7 +78,7 @@ function signUpSuccess(result) {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
-        window.location.href = "../pages/analyse.html"
+        window.location.href = "../pages/homePage.html"
     } else {
         alert("八嘎");
     }

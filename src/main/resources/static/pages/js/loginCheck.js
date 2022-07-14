@@ -2,18 +2,16 @@ function LoginCheck(){
     let isLogin = getCookie("isLogin");
     let userName = getCookie("userName");
     if(isLogin !== '1'){//未登录
-        window.location.href = "login.html";
+        window.location.href = "../pages/login.html";
     }
     else{
         $(".userName").html("你好！"+userName);
     }
 }
-function LogoutCheck(){
 
-}
 function Logout(){
     setCookie("isLogin","0")
-    window.location.href = "login.html";
+    window.location.href = "../pages/login.html";
 }
 
 function LogoutShow(){

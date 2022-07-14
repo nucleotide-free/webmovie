@@ -75,6 +75,13 @@
         from movies
         limit #{off}, 10
     </select>
+    <!--请求推荐列表-->
+    <select id="queryRecommendList" parameterType="int" resultType="map" >
+        select *
+        from movies,result_predict_all
+        where movies.id = result_predict_all.moveid
+        and userid = #{userid}
+    </select>
     <!--填写评价信息-->
     <insert id="insertRatingInfo" parameterType="map">
         insert into ratings
