@@ -15,7 +15,7 @@ function showCard(id) {
 
 
 $(function () {
-    queryMoviesList(1);
+    queryMoviesList(0);
 });
 
 // 查看项目及其包含的问卷列表
@@ -23,7 +23,7 @@ function queryMoviesList(off) {
     off=off*10
     var url = '/queryMoviesList';
     var data = {
-        "off": off.toString(),
+        "off": off
     };
     commonAjaxPost(true, url, data, queryMoviesListSuccess);
 }

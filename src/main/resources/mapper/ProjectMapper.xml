@@ -70,14 +70,11 @@
         from movies_keywords
     </select>
     <!--请求电影列表-->
-    <select id="queryMoviesList" resultType="map">
+    <select id="queryMoviesList" parameterType="int" resultType="map">
         select *
         from movies
-
-        <if test="off != null">
-            limit ${off}, 10
-        </if>
-
+        limit
+        #{off} , 10
     </select>
     <!--填写评价信息-->
     <insert id="insertRatingInfo" parameterType="map">

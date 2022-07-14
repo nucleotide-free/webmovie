@@ -158,9 +158,9 @@ public class ProductResultController {
     }
 
     @RequestMapping(value = "/queryMoviesList")
-    public HttpResponseEntity queryMoviesList(@RequestBody  String off) {
+    public HttpResponseEntity queryMoviesList(@RequestBody Map<String,Object> request1) {
         HttpResponseEntity httpResponseEntity = new HttpResponseEntity();
-        List<Object> result = projectService.queryMoviesList( parseInt(off));
+        List<Object> result = projectService.queryMoviesList((Integer) request1.get("off"));
         httpResponseEntity.setCode(Constans.SUCCESS_CODE);
         httpResponseEntity.setData(result);
         return httpResponseEntity;
