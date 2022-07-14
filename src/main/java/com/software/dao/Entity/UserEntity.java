@@ -1,12 +1,12 @@
 package com.software.dao.Entity;
 
 public class UserEntity {
-    private int id;
+    private int userId;
     private String username;
     private String password;
 
     public int getId() {
-        return id;
+        return userId;
     }
     public String getUsername() {
         return username;
@@ -16,7 +16,7 @@ public class UserEntity {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.userId = userId;
     }
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
@@ -29,7 +29,7 @@ public class UserEntity {
 
     public UserEntity(UserEntity userEntity) {
         super();
-        this.id = userEntity.getId();
+        this.userId = userEntity.getId();
         this.username = userEntity.getUsername();
         this.password = userEntity.getPassword();
     }
