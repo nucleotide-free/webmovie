@@ -1,4 +1,21 @@
 var questIdModal = '';
+var data
+function showCard(title,release_date,genres,runtime,overview){
+console.log(title)
+    $(".overlay").fadeTo(200, 0.5);
+    $(".card_title").innerText=title
+    $(".card_movie_year").innerText=release_date
+    $(".card_movie_tag").innerText=genres
+    $(".card_right__review").innerText=overview
+    $(".card").show();
+}
+// $(function () {
+//     //关闭遮盖层
+//     $(".overlay").click(function () {
+//         $(".overlay").fadeOut(200);
+//         $(".card").hide();
+//     });
+// });
 
 $(function() {
     // isLoginFun();
@@ -7,19 +24,6 @@ $(function() {
     // $("#ctl01_lblUserName").html(userId);
     queryMoviesList();
 });
-
-function showCard(title){
-    // var MovieInfo = JSON.stringify(returndata);
-    // console.log("11112222"+MovieInfo)
-    console.log("1111"+ title)
-    // $(".card_title").innerText = title
-    // $(".card_movie_year").innerText=release_date
-    // $(".card_movie_tag").innerText=genres
-    // $(".card_right__review").innerText=overview
-    $(".overlay").fadeTo(200, 0.5);
-    $(".card").show();
-}
-
 // 查看项目及其包含的问卷列表
 function queryMoviesList() {
 
@@ -49,8 +53,8 @@ function queryMoviesListSuccess(result) {
                 if (movieTitle.length >= 25) {
                     movieTitle = movieTitle.substring(0, 26) + "...";
                 }
-                if(i==0) {
-                    var sb = '     <div class="overlay" ></div> <div class="card">';
+                if(i<=0) {
+                    var sb = '     <div class="overlay" onclick="hideCard()" ></div> <div class="card">';
                     sb += '        <div class="card_left">';
                     sb += '            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png"/>';
                     sb += '        </div>';
@@ -180,7 +184,6 @@ function queryMoviesListSuccess(result) {
     }
 
 }
-
 //遮罩层取消+评价
 function hideCard(){
     $(".overlay").fadeOut(200);
