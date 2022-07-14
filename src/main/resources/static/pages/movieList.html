@@ -6,20 +6,31 @@
     <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../pages/css/forlist.css">
     <link rel="stylesheet" href="../pages/css/test.css">
+    <link rel="stylesheet" href="../pages/css/logout.css">
 </head>
 <body>
 <div id="page-container">
     <div id="top_logo">
         <div id="main-nav">
             <ul>
-                <li class="dropdown"><a class="dropbtn" href="../pages/homepage.html">首页 HOME</a></li>
-                <li class="dropdown"><a class="dropbtn" href="../pages/test.html">电影现状分析</a></li>
-                <li class="dropdown"><a class="dropbtn" href="#" style="color:#008B00;" >年度榜单</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/homePage.html">首页</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/analyse.html">电影现状分析</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/movieList.html">电影榜单</a></li>
             </ul>
+            <div class="userName" title="退出登录" onclick="LogoutShow()">你好！</div>
         </div>
     </div>
 
-    <div  id="panel-23802"></div>
+    <div class="logout-overlay" onclick="LogoutHide()"></div>
+    <div class="logout-box">
+        <h5>确定要退出登录吗？</h5>
+        <div>
+            <button class="logout-yes">Yes</button>
+            <button class="logout-no">No</button>
+        </div>
+    </div>
+
+    <div id="panel-23802"></div>
     <div class="pagefor" style="margin-top: 50px">
         <ul>
             <li><a href="Shop_guide.jsp?page=prev">prev</a></li>
@@ -38,13 +49,12 @@
             <li><a href="Shop_guide.jsp?page=next">next</a></li>
         </ul>
     </div>
-
-
 </div>
 
 </body>
-<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
-<script src="../common/common.js"></script>
+<script src="../plugins/jQuery/jquery-1.12.4.min.js"></script>
 <script src="../plugins/cookie/jquery.cookie.js"></script>
+<script src="../common/common.js"></script>
+<script src="../pages/js/loginCheck.js"></script>
 <script src="../pages/js/forlist.js"></script>
 </html>

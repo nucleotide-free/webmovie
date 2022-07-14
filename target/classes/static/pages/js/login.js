@@ -65,7 +65,7 @@ function loginSuccess(result) {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
-        window.location.href = "homepage.html"
+        window.location.href = "../pages/analyse.html"
     } else {
         alert("八嘎");
     }
@@ -74,13 +74,22 @@ function loginSuccess(result) {
 //注册成功回调
 function signUpSuccess(result) {
     console.log(result)
-    if (result.code == '666') {
-        //  layer.msg(result.message, { icon: 1 });
+    if (result.code === '666') {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
-        window.location.href = "homepage.html"
+        window.location.href = "../pages/analyse.html"
     } else {
         alert("八嘎");
     }
 }
+
+const signUpButton = document.getElementById("signUp");
+const signInButton = document.getElementById("signIn");
+const container = document.getElementById("container");
+signUpButton.addEventListener("click", () => {
+    container.classList.add("right-panel-active")
+});
+signInButton.addEventListener("click", () => {
+    container.classList.remove("right-panel-active")
+});

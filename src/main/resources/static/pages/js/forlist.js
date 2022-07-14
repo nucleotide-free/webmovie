@@ -1,6 +1,11 @@
 var questIdModal = '';
 let data;
 
+$(function () {
+    LoginCheck();
+    queryMoviesList(1);
+});
+
 function showCard(id) {
     $(".card_title").html(data[id].title)
     $(".card_movie_year").html(data[id].release_date)
@@ -8,22 +13,16 @@ function showCard(id) {
     $(".card_movie_tag").html(data[id].genres)
     $(".card_right__review p").html(data[id].overview)
     $(".card_right__review a").attr("href","https://www.imdb.com/title/"+data[id].imdb_id)
-    $(".card_left img").attr("src","https://image.tmdb.org/t/p/original/"+data[id].poster_path)
+    $(".card_left img").attr("src","https://image.tmdb.org/t/p/original"+data[id].poster_path)
     $(".overlay").fadeTo(200, 0.5);
     $(".card").show();
 }
 
-
-$(function () {
-    queryMoviesList(1);
-});
-
 // 查看项目及其包含的问卷列表
 function queryMoviesList(off) {
-    off=off*10
     var url = '/queryMoviesList';
     var data = {
-        "off": off.toString(),
+        "off": off*10
     };
     commonAjaxPost(true, url, data, queryMoviesListSuccess);
 }
@@ -161,8 +160,6 @@ function queryMoviesListSuccess(result) {
                 $("#panel-23802").append(ss);
             }
             //for循环结束
-
-
         } else {
             alert("ppppp")
         }
@@ -175,7 +172,6 @@ function queryMoviesListSuccess(result) {
     } else {
         layer.msg(result.message, {icon: 2})
     }
-
 }
 
 //遮罩层取消+评价

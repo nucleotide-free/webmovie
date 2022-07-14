@@ -75,13 +75,11 @@ body, #page-container {
     transition: .4s all ease;
 }
 
-
-
-.fnc {
-    /* you can add color names and their values here
-    and then simply add classes like .m--blend-$colorName to .fnc-slide
-    to apply specific color for mask blend mode */
+.userName {
+    float: right;
+    margin-right: 30px;
 }
+
 .fnc-slider {
     overflow: hidden;
     box-sizing: border-box;

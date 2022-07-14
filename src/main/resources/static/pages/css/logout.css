@@ -1,0 +1,74 @@
+.userName {
+    position: fixed;
+    right: 0;
+    top: 20px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+/* 半透明的遮罩层 */
+.logout-overlay {
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200; /* 此处的图层要大于页面 */
+    display: none;
+}
+
+.logout-box{
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.35);
+    z-index: 201;
+    display: none;
+
+}
+.logout-box h5 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 30px auto;
+}
+.logout-box div{
+
+}
+.logout-box button{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 1em;
+    padding: 2em 4em;
+    cursor: pointer;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    margin: auto;
+    color: #363636;
+    background: none;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.logout-box button:hover{
+    outline: none;
+    color: #377340;
+}
+

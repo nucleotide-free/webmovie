@@ -11,7 +11,7 @@
 
 body, #page-container {
     text-align: center;
-    font-family: Candara, "Microsoft YaHei" ,sans-serif;
+    font-family: "Microsoft YaHei" ,sans-serif;
     font-size: 16px;
     color: #1f1f1f;
     background: white;
@@ -89,7 +89,10 @@ body, #page-container {
     border-radius: 0;
     transition: .4s all ease;
 }
-
+.userName {
+    float: right;
+    margin-right: 30px;
+}
 #content{
     margin-top: 90px;
 }

@@ -3,105 +3,266 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>电影推荐</title>
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../js/echarts.min.js"></script>
-    <script type="text/javascript" src="../js/echarts-wordcloud.min.js"></script>
-    <link rel="stylesheet" href="../pages/css/homepage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="../pages/css/homePage.css">
 </head>
 <body>
 <div id="page-container">
     <div id="top_logo">
         <div id="main-nav">
             <ul>
-                <li class="dropdown"><a class="dropbtn" href="../pages/showTop.html">首页 HOME</a></li>
-                <li class="dropdown"><a class="dropbtn" href="../pages/homepage.html">电影现状分析</a></li>
-                <li class="dropdown"><a class="dropbtn" href="../pages/forlist.html">年度榜单</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/homePage.html">首页</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/analyse.html">电影现状分析</a></li>
+                <li class="dropdown"><a class="dropbtn" href="../pages/movieList.html">电影榜单</a></li>
             </ul>
+            <div class="userName">你好！</div>
         </div>
     </div>
 
     <div id="content">
-        <div class="charts">
-            <div class="chart-content">
-                <div class="chart-title">
-                    Top20类型电影的数量比较
-                    <button class="chart-change" id="switch1">
-                        <img src="../images/change.svg">切换</button>
-                </div>
-                <div class="chart-graph" id="graph1"style="display: none" ></div>
-                <div class="chart-graph" id="graph1-2" ></div>
-            </div>
+        <div class="demo-cont">
+            <!-- slider start -->
+            <div class="fnc-slider example-slider">
+                <div class="fnc-slider__slides">
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-blue  m--active-slide">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Avatar</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-green">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content" style="top:58%;">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Dune</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span></span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Star Wars</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Joker</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span></span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-green">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content" style="top:30%;">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Minions</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-red">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Deadpool</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content"  style="top:58%;">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Dr.strange</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
 
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #1d4c69;">
-                    1874-2020年电影数量统计
-                    <button class="chart-change" id="switch2">
-                        <img src="../images/change.svg">切换</button>
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask" style="top:20%;">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content" style="top:70%;">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>John Wick</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span></span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start -->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Captain</span>
+                                    </div>
+                                    <div class="fnc-slide__heading-line">
+                                        <span>America</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
+                    <!-- slide start-->
+                    <div class="fnc-slide m--blend-dark">
+                        <div class="fnc-slide__inner">
+                            <div class="fnc-slide__mask">
+                                <div class="fnc-slide__mask-inner"></div>
+                            </div>
+                            <div class="fnc-slide__content" style="top:55%;">
+                                <h2 class="fnc-slide__heading">
+                                    <div class="fnc-slide__heading-line">
+                                        <span>Zootopia</span>
+                                    </div>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- slide end -->
                 </div>
-                <div class="chart-graph" id="graph2"></div>
-                <div class="chart-graph" id="graph2-2" style="display: none"></div>
-            </div>
+                <nav class="fnc-nav">
+                    <div class="fnc-nav__bgs">
+                        <div class="fnc-nav__bg m--navbg-blue m--active-nav-bg"></div>
+                        <div class="fnc-nav__bg m--navbg-green"></div>
+                        <div class="fnc-nav__bg m--navbg-dark"></div>
+                        <div class="fnc-nav__bg m--navbg-red"></div>
+                        <div class="fnc-nav__bg m--navbg-green"></div>
+                        <div class="fnc-nav__bg m--navbg-red"></div>
 
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #FAA904;">
-                    各类型电影在1874-2020年间的数量变化
-                </div>
-                <div class="chart-graph" id="graph3"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #E04236;">
-                    Top11国家电影数量比例
-                </div>
-                <div class="chart-graph" id="graph4"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #F06B82;">
-                    Top20类型电影的票房
-                </div>
-                <div class="chart-graph" id="graph5"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: rgb(255,215,0);">
-                    Top20类型电影的平均评分
-                </div>
-                <div class="chart-graph" id="graph6"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #2DC7C9;">
-                    不同时长电影的票房
-                </div>
-                <div class="chart-graph" id="graph7"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #8A2BE2;">
-                    不同时长电影的评分
-                </div>
-                <div class="chart-graph" id="graph8"></div>
-            </div>
-
-            <div class="chart-content">
-                <div class="chart-title" style="background-color: #504035;">
-                    电影关键词
-                </div>
-                <div class="chart-graph" id="graph9"></div>
+                        <div class="fnc-nav__bg m--navbg-dark"></div>
+                        <div class="fnc-nav__bg m--navbg-green"></div>
+                        <div class="fnc-nav__bg m--navbg-dark"></div>
+                        <div class="fnc-nav__bg m--navbg-dark"></div>
+                    </div>
+                    <div class="fnc-nav__controls">
+                        <button class="fnc-nav__control">
+                            Avatar
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Dune
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Star Wars
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Joker
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Minions
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Deadpool
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Doctor Strange
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            John Wick
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Captain America
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                        <button class="fnc-nav__control">
+                            Zootopia
+                            <span class="fnc-nav__control-progress"></span>
+                        </button>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
 </div>
 </body>
-
-<script src="../js/option1.js"></script>
-<script src="../js/option2.js"></script>
-<script src="../js/option3.js"></script>
-<script src="../js/option4.js"></script>
-<script src="../js/option5.js"></script>
-<script src="../js/option6.js"></script>
-<!--<script src="../js/option7.js"></script>-->
-<!--<script src="../js/option8.js"></script>-->
-<!--<script src="../js/option9.js"></script>-->
+<script src="../plugins/jQuery/jquery-1.12.4.min.js"></script>
+<script src="../plugins/cookie/jquery.cookie.js"></script>
+<script src="../common/common.js"></script>
+<script src="../pages/js/loginCheck.js"></script>
+<script src="../pages/js/homePage.js"></script>
 </html>

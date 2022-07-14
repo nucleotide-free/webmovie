@@ -58,11 +58,28 @@ body {
     margin: 30px 0 0 0;
     padding: 0 0 0 40px;
     letter-spacing: 1px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .card .card_right__details ul {
     list-style-type: none;
-    padding: 0 0 0 40px;
+    padding: 0 40px;
     margin: 10px 0 0 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /*设置p元素最大4行，父元素需填写宽度才明显*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .card .card_right__details ul li {
     display: inline;
