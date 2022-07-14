@@ -66,7 +66,7 @@ function loginSuccess(result) {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
-        window.location.href = "homepage.html"
+        window.location.href = "showTop.html"
     } else {
         alert("八嘎");
     }
@@ -80,7 +80,7 @@ function signUpSuccess(result) {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignInName.value);
-        window.location.href = "homepage.html"
+        window.location.href = "showTop.html"
     } else {
         alert("八嘎");
     }
