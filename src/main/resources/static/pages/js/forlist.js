@@ -1,17 +1,5 @@
 var questIdModal = '';
 
-function showCard(title,release_date,genres,runtime,overview){
-    var MovieInfo = JSON.stringify(returndata);
-    console.log(MovieInfo)
-    $(".overlay").fadeTo(200, 0.5);
-    $(".card_title").innerText=title
-    $(".card_movie_year").innerText=release_date
-    $(".card_movie_tag").innerText=genres
-    $(".card_right__review").innerText=overview
-    $(".card").show();
-}
-
-
 $(function() {
     // isLoginFun();
     // var userId= getCookie('userId');
@@ -19,6 +7,19 @@ $(function() {
     // $("#ctl01_lblUserName").html(userId);
     queryMoviesList();
 });
+
+function showCard(title){
+    // var MovieInfo = JSON.stringify(returndata);
+    // console.log("11112222"+MovieInfo)
+    console.log("1111"+ title)
+    // $(".card_title").innerText = title
+    // $(".card_movie_year").innerText=release_date
+    // $(".card_movie_tag").innerText=genres
+    // $(".card_right__review").innerText=overview
+    $(".overlay").fadeTo(200, 0.5);
+    $(".card").show();
+}
+
 // 查看项目及其包含的问卷列表
 function queryMoviesList() {
 
@@ -130,7 +131,7 @@ function queryMoviesListSuccess(result) {
                     $("#panel-23802").append(sb);
                 }
                 var ss='    <div id="content">';
-                ss+='        <div class="MovieList" onclick="showCard('+MovieInfo.title+','+MovieInfo.release_date+','+MovieInfo.genres+','+MovieInfo.runtime+','+MovieInfo.overview+')">';
+                ss+='        <div class="MovieList" onclick=\'showCard('+'"'+ MovieInfo.title + '"'+')\'>';
                 ss+='            <div class="movie-number"></div>';
                 ss+='            <div class="movie-left">';
                 ss+='                <img src="../images/poster/killbill.jpeg" height="200">';
