@@ -1,9 +1,20 @@
 var questIdModal = '';
 let data;
+var colorful = ["#000000",
+    "rgb(165,109,166)",
+    "rgb(121,133,168)",
+    "#5F6E65",
+    "#54464B",
+    "#D0B4A9",
+    "#809489",
+    "#A9888D",
+    "#9F9C96",
+    "#878FB1",
+]
 
 $(function () {
     LoginCheck();
-    queryMoviesList(1);
+    queryMoviesList(0);
 });
 
 function showCard(id) {
@@ -20,9 +31,22 @@ function showCard(id) {
 
 // 查看项目及其包含的问卷列表
 function queryMoviesList(off) {
+    var ord_off = getCookie("off");
+    if(ord_off){
+        if (off === -1 ){
+            off = parseInt(getCookie("off"))-1;
+            if(off < 0) off = 0;
+        }
+        else if(off === -2){
+            off=parseInt(getCookie("off"))+1;
+        }
+        var page_num_old = "#page-"+ord_off;
+        $(page_num_old).removeClass("p-active");
+    }
+    setCookie("off",off+1);
     var url = '/queryMoviesList';
     var data = {
-        "off": off*10
+        "off": off * 10
     };
     commonAjaxPost(true, url, data, queryMoviesListSuccess);
 }
@@ -31,14 +55,9 @@ function queryMoviesListSuccess(result) {
     console.log(result.code);
     if (result.code == "666") {
         data = result.data;
-        console.log(data)
         $("#panel-23802").empty();
 
-        //遍历多个项目
-        var text = "";
-
         if (data.length) {
-
             for (var i = 0; i < data.length; i++) {
                 var MovieInfo = data[i];
                 var movieTitle = MovieInfo.title;
@@ -128,7 +147,7 @@ function queryMoviesListSuccess(result) {
                 }
                 var ss = '    <div id="content">';
                 ss += '        <div class="MovieList" onclick=\'showCard(' + '"' + i + '"' + ')\'>';
-                ss += '            <div class="movie-number"></div>';
+                ss += '            <div class="movie-number" style="background-color:'+ colorful[i] +'"></div>';
                 ss += '            <div class="movie-left">';
                 ss += '                <img src="https://image.tmdb.org/t/p/original/'+MovieInfo.poster_path+'" height="200">';
                 ss += '            </div>';
@@ -161,18 +180,19 @@ function queryMoviesListSuccess(result) {
                 ss += '            </div>';
                 ss += '        </div>';
 
-                // }
                 $("#panel-23802").append(ss);
+                var page_num = "#page-"+getCookie("off");
+                $(page_num).addClass("p-active");
             }
             //for循环结束
         } else {
-            alert("ppppp")
+            alert("暂时没有电影！")
         }
 
     } else if (result.code == "333") {
         layer.msg(result.message, {icon: 2});
         setTimeout(function () {
-            window.location.href = 'login.html';
+            window.location.href = '../pages/login.html';
         }, 1000)
     } else {
         layer.msg(result.message, {icon: 2})

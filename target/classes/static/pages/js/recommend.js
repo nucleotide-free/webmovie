@@ -1,5 +1,16 @@
 var questIdModal = '';
-var data
+var data;
+var colorful = ["#000000",
+    "#B47C74",
+    "#354B6A",
+    "#5F6E65",
+    "#54464B",
+    "#D0B4A9",
+    "#809489",
+    "#A9888D",
+    "#9F9C96",
+    "#878FB1",
+]
 function showCard(title,release_date,genres,runtime,overview,userid){
     var MovieInfo = JSON.stringify(returndata);
     console.log(MovieInfo)
@@ -10,22 +21,15 @@ function showCard(title,release_date,genres,runtime,overview,userid){
     $(".card_right__review").innerText=overview
     $(".card").show();
 }
-$(function () {
-    //关闭遮盖层
-    $(".overlay").click(function () {
-        $(".overlay").fadeOut(200);
-        $(".card").hide();
-    });
-});
+
 
 $(function() {
-    //isLoginFun();
-    //var userId= getCookie('userId');
-    //header();
-    //$("#ctl01_lblUserName").html(userId);
+    LoginCheck();
     queryMoviesList();
+
 });
-// 查看项目及其包含的问卷列表
+
+
 function queryMoviesList() {
     var userId= getCookie("userId");
     console.log(userId);
@@ -136,9 +140,8 @@ function queryMoviesListSuccess(result) {
                     sb += '    </div>';
                     $("#panel-23802").append(sb);
                 }
-                var ss='    <div id="content">';
-                ss+='        <div class="MovieList" onclick="showCard('+MovieInfo.title+','+MovieInfo.release_date+','+MovieInfo.genres+','+MovieInfo.runtime+','+MovieInfo.overview+')">';
-                ss+='            <div class="movie-number"></div>';
+                var ss='      <div class="MovieList" onclick="showCard('+MovieInfo.title+','+MovieInfo.release_date+','+MovieInfo.genres+','+MovieInfo.runtime+','+MovieInfo.overview+')">';
+                ss+='            <div class="movie-number" style="background-color:'+ colorful[i] +'"></div>';
                 ss+='            <div class="movie-left">';
                 ss+= '                <img src="https://image.tmdb.org/t/p/original/'+MovieInfo.poster_path+'" height="200">';
                 ss+='            </div>';
@@ -164,16 +167,12 @@ function queryMoviesListSuccess(result) {
                 ss+='                    <div class="movie-rating-num">'+MovieInfo.vote_count+'人已评价</div>';
                 ss+='                </div>';
                 ss+='            </div>';
-                ss+='        </div>';
 
-                // }
                 $("#panel-23802").append(ss);
+                $("#results-report").html("电影推荐 Movie Recommend");
             }
-            //for循环结束
-
-
         } else {
-            alert("ppppp")
+            $("#results-report").html("暂无推荐，期待您的评分！");
         }
 
     } else if (result.code == "333") {
