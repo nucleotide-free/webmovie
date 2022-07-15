@@ -77,8 +77,9 @@ function signUpSuccess(result) {
     if (result.code === '666') {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
-        setCookie('userName', SignInName.value);
-        window.location.href = "../pages/homePage.html"
+        setCookie('userName', SignUpName.value);
+        alert("注册成功");
+        window.location.href = "../pages/login.html"
     } else {
         alert("八嘎");
     }
