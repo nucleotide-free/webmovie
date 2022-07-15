@@ -78,7 +78,8 @@ function signUpSuccess(result) {
         setCookie('isLogin', '1');
         setCookie('userId', result.data.id);
         setCookie('userName', SignUpName.value);
-        window.location.href = "../pages/homePage.html"
+        alert("注册成功");
+        window.location.href = "../pages/login.html"
     } else {
         alert("八嘎");
     }
